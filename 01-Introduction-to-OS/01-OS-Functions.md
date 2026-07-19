@@ -1,4 +1,4 @@
-# 🖥️ OS & Main Functions
+# OS & Main Functions
 
 ---
 
@@ -20,9 +20,9 @@ An **Operating System (OS)** is **system software** that acts as an **intermedia
 
 ---
 
-## 🔧 5 Main Functions of an OS
+##  5 Main Functions of an OS
 
-### 1. 🔲 Resource Management (CPU, Memory, I/O)
+### 1.  Resource Management (CPU, Memory, I/O)
 
 The OS decides **who gets what resource and when**.
 
@@ -36,7 +36,7 @@ The OS decides **who gets what resource and when**.
 
 ---
 
-### 2. ⚙️ Process Management
+### 2.  Process Management
 
 A **process** is a program in execution. The OS:
 - Creates and terminates processes
@@ -50,7 +50,7 @@ OS creates Process A → runs it → pauses it → runs Process B → resumes A
 
 ---
 
-### 3. 📁 File System Management
+### 3.  File System Management
 
 The OS provides an abstraction over raw disk storage:
 - Organizes data into **files and directories**
@@ -62,7 +62,7 @@ The OS provides an abstraction over raw disk storage:
 
 ---
 
-### 4. 🔒 Security & Protection
+### 4.  Security & Protection
 
 The OS protects:
 - **Processes from each other** (one program can't read another's memory)
@@ -76,7 +76,7 @@ Mechanisms:
 
 ---
 
-### 5. 🎭 Abstraction (Hiding Hardware Complexity)
+### 5.  Abstraction (Hiding Hardware Complexity)
 
 The OS hides the messy details of hardware behind simple interfaces (APIs / System Calls).
 
@@ -92,7 +92,7 @@ The app doesn't care HOW the disk works — the OS handles it.
 
 ---
 
-## 📊 Summary Table
+##  Summary Table
 
 | Function | What it Does | Why It Matters |
 |----------|-------------|----------------|
@@ -104,7 +104,7 @@ The app doesn't care HOW the disk works — the OS handles it.
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is an OS? Why is it needed?**
 > An OS is system software that manages hardware resources and provides services to programs. Without it, every program would need to directly control hardware, leading to conflicts, crashes, and massive complexity.
