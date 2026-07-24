@@ -1,4 +1,4 @@
-#  OS & Main Functions
+# OS & Main Functions
 
 ---
 
@@ -6,7 +6,7 @@
 
 An **Operating System (OS)** is **system software** that acts as an **intermediary** between the user/applications and the computer hardware.
 
->  **One-liner for interviews**: "An OS manages hardware resources and provides services to application programs."
+> **One-liner for interviews**: "An OS manages hardware resources and provides services to application programs."
 
 ```
 ┌──────────────────────────────┐
@@ -20,25 +20,26 @@ An **Operating System (OS)** is **system software** that acts as an **intermedia
 
 ---
 
-##  5 Main Functions of an OS
+## 5 Main Functions of an OS
 
-### 1.  Resource Management (CPU, Memory, I/O)
+### 1. Resource Management (CPU, Memory, I/O)
 
 The OS decides **who gets what resource and when**.
 
-| Resource | OS Role |
-|----------|---------|
-| CPU | Schedules which process runs |
-| Memory (RAM) | Allocates and deallocates memory |
-| I/O Devices | Manages access to disk, keyboard, mouse, etc. |
+| Resource     | OS Role                                       |
+| ------------ | --------------------------------------------- |
+| CPU          | Schedules which process runs                  |
+| Memory (RAM) | Allocates and deallocates memory              |
+| I/O Devices  | Manages access to disk, keyboard, mouse, etc. |
 
 **Interview angle**: Without the OS, two programs might both try to write to the same memory address — chaos! The OS prevents this.
 
 ---
 
-### 2.  Process Management
+### 2. Process Management
 
 A **process** is a program in execution. The OS:
+
 - Creates and terminates processes
 - Switches the CPU between processes (**context switching**)
 - Handles inter-process communication (IPC)
@@ -50,9 +51,10 @@ OS creates Process A → runs it → pauses it → runs Process B → resumes A
 
 ---
 
-### 3.  File System Management
+### 3. File System Management
 
 The OS provides an abstraction over raw disk storage:
+
 - Organizes data into **files and directories**
 - Controls **permissions** (who can read/write)
 - Manages **file creation, deletion, reading, writing**
@@ -62,21 +64,23 @@ The OS provides an abstraction over raw disk storage:
 
 ---
 
-### 4.  Security & Protection
+### 4. Security & Protection
 
 The OS protects:
+
 - **Processes from each other** (one program can't read another's memory)
 - **Users from each other** (multi-user systems)
 - **System from unauthorized access** (authentication)
 
 Mechanisms:
+
 - Kernel mode vs User mode (hardware-level protection)
 - Access control lists (ACLs)
 - Memory protection (page tables with permissions)
 
 ---
 
-### 5.  Abstraction (Hiding Hardware Complexity)
+### 5. Abstraction (Hiding Hardware Complexity)
 
 The OS hides the messy details of hardware behind simple interfaces (APIs / System Calls).
 
@@ -92,29 +96,32 @@ The app doesn't care HOW the disk works — the OS handles it.
 
 ---
 
-##  Summary Table
+## Summary Table
 
-| Function | What it Does | Why It Matters |
-|----------|-------------|----------------|
-| Resource Management | Allocates CPU, RAM, I/O fairly | Prevents starvation, maximizes utilization |
-| Process Management | Runs & switches between programs | Enables multitasking |
-| File System Management | Organizes data storage | Simple, universal data access |
-| Security & Protection | Isolates processes & users | Prevents crashes and data theft |
-| Abstraction | Hides hardware complexity | Simplifies programming |
+| Function               | What it Does                     | Why It Matters                             |
+| ---------------------- | -------------------------------- | ------------------------------------------ |
+| Resource Management    | Allocates CPU, RAM, I/O fairly   | Prevents starvation, maximizes utilization |
+| Process Management     | Runs & switches between programs | Enables multitasking                       |
+| File System Management | Organizes data storage           | Simple, universal data access              |
+| Security & Protection  | Isolates processes & users       | Prevents crashes and data theft            |
+| Abstraction            | Hides hardware complexity        | Simplifies programming                     |
 
 ---
 
-##  Interview Questions & Answers
+## Interview Questions & Answers
 
 **Q: What is an OS? Why is it needed?**
+
 > An OS is system software that manages hardware resources and provides services to programs. Without it, every program would need to directly control hardware, leading to conflicts, crashes, and massive complexity.
 
 **Q: What are the main functions of an OS?**
+
 > Resource management, process management, file system management, security & protection, and abstraction of hardware.
 
 **Q: How does an OS provide security?**
+
 > Through kernel/user mode separation, memory protection via page tables, user authentication, and access control lists.
 
 ---
 
-*Next → [Types of OS](./02-Types-of-OS.md)*
+_Next → [Types of OS](./02-Types-of-OS.md)_
