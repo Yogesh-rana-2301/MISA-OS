@@ -1,10 +1,10 @@
-# 📁 Topic 4 — File Systems
+#  Topic 4 — File Systems
 
 > **Goal**: Understand how the OS manages persistent storage — interviews focus on allocation methods, inodes, and fragmentation.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -16,7 +16,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] What does a file system do? What are its components?
 - [ ] Contiguous vs Linked vs Indexed allocation — pros/cons
@@ -28,7 +28,7 @@
 
 ---
 
-## 🎯 Top Interview Questions from This Topic
+##  Top Interview Questions from This Topic
 
 1. What is a file system and what does it do?
 2. Compare contiguous, linked, and indexed file allocation.

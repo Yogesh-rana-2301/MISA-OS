@@ -1,4 +1,4 @@
-# 🔒 Mutex & Spinlocks
+#  Mutex & Spinlocks
 
 ---
 
@@ -43,7 +43,7 @@ mutex_unlock():
 
 | Property | Detail |
 |----------|--------|
-| **Blocking** | ✅ Process sleeps while waiting (no CPU waste) |
+| **Blocking** |  Process sleeps while waiting (no CPU waste) |
 | **Owner** | Mutex has an owner — only the owner can unlock |
 | **Use case** | Protecting shared data structures |
 | **Overhead** | System call overhead for sleep/wake |
@@ -82,9 +82,9 @@ P_B burns CPU cycles doing nothing useful while spinning.
 
 | Property | Detail |
 |----------|--------|
-| **Blocking** | ❌ No — process stays on CPU (busy-waiting) |
+| **Blocking** |  No — process stays on CPU (busy-waiting) |
 | **CPU waste** | Wastes CPU during wait |
-| **Fast** | ✅ No context switch overhead |
+| **Fast** |  No context switch overhead |
 | **Best for** | Very short CS durations |
 
 ---
@@ -98,8 +98,8 @@ P_B burns CPU cycles doing nothing useful while spinning.
 | **Context switch** | Yes (on block and wake) | No |
 | **Best for** | Long critical sections | Very short critical sections |
 | **Overhead** | Higher (OS involvement) | Lower per iteration |
-| **Multi-core friendly** | Always | ✅ Yes, especially on multi-core |
-| **Single-core** | ✅ Good | ❌ Bad (spinlock = deadlock if holder preempted) |
+| **Multi-core friendly** | Always |  Yes, especially on multi-core |
+| **Single-core** |  Good |  Bad (spinlock = deadlock if holder preempted) |
 
 ---
 
@@ -128,7 +128,7 @@ Critical section duration:
 
 ---
 
-## 🔧 test_and_set — The Atomic Instruction Behind Both
+##  test_and_set — The Atomic Instruction Behind Both
 
 ```c
 // Atomic (hardware-guaranteed): read AND set in ONE uninterruptible step
@@ -148,7 +148,7 @@ The **atomicity** is the key — the CPU guarantees no other core can interfere 
 
 ---
 
-## ⚠️ Common Pitfalls
+##  Common Pitfalls
 
 | Problem | Description |
 |---------|-------------|
@@ -159,7 +159,7 @@ The **atomicity** is the key — the CPU guarantees no other core can interfere 
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a mutex?**
 > A mutex (mutual exclusion lock) is a synchronization primitive that ensures only one thread/process can enter a critical section at a time. A thread that can't acquire the mutex blocks (sleeps), freeing the CPU for other work.

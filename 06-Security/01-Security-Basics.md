@@ -1,4 +1,4 @@
-# 🛡️ Security Basics
+#  Security Basics
 
 ---
 
@@ -35,10 +35,10 @@ More factors = harder to impersonate.
 > Happens AFTER authentication.
 
 ```
-Alice is authenticated ✅
+Alice is authenticated 
 
-Now: Can Alice read /etc/passwd?    → Check permissions → YES ✅
-     Can Alice write /etc/shadow?   → Check permissions → NO ❌
+Now: Can Alice read /etc/passwd?    → Check permissions → YES 
+     Can Alice write /etc/shadow?   → Check permissions → NO 
      Can Alice run sudo?            → Check sudo list   → YES (if in sudoers)
 ```
 
@@ -77,7 +77,7 @@ Every security measure exists to protect one or more of these three properties.
 
 ---
 
-### 1. 🔒 Confidentiality
+### 1.  Confidentiality
 
 > **Data is only accessible to authorized parties — protected from unauthorized disclosure.**
 
@@ -95,7 +95,7 @@ Every security measure exists to protect one or more of these three properties.
 
 ---
 
-### 2. ✅ Integrity
+### 2.  Integrity
 
 > **Data is accurate, complete, and has not been tampered with — by unauthorized parties.**
 
@@ -113,7 +113,7 @@ Every security measure exists to protect one or more of these three properties.
 
 ---
 
-### 3. 🟢 Availability
+### 3.  Availability
 
 > **Systems and data are accessible and operational when legitimate users need them.**
 
@@ -174,7 +174,7 @@ carol: no access
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between authentication and authorization?**
 > Authentication verifies identity — "Who are you?" (e.g., username + password). Authorization determines permissions — "What are you allowed to do?" (e.g., can this user access this file?). Authentication always happens before authorization.

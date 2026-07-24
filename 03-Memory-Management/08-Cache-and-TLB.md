@@ -1,4 +1,4 @@
-# ⚡ Cache Memory, Locality & TLB
+#  Cache Memory, Locality & TLB
 
 ---
 
@@ -84,7 +84,7 @@ RAM block 4  → Cache line 0  (conflict! must evict)
 RAM block 8  → Cache line 0  (conflict again!)
 ```
 
-| ✅ Pros | ❌ Cons |
+|  Pros |  Cons |
 |--------|--------|
 | Simple, fast lookup | Conflict misses (two frequently used blocks fight for same line) |
 
@@ -97,7 +97,7 @@ RAM block 8  → Cache line 0  (conflict again!)
 RAM block can be placed in cache line 0, 1, 2, ... (any free slot)
 ```
 
-| ✅ Pros | ❌ Cons |
+|  Pros |  Cons |
 |--------|--------|
 | No conflict misses | Slow lookup (must search all lines) |
 
@@ -113,7 +113,7 @@ RAM block can be placed in cache line 0, 1, 2, ... (any free slot)
   RAM block → maps to 1 set → can go in any of 4 lines
 ```
 
-| ✅ Pros | ❌ Cons |
+|  Pros |  Cons |
 |--------|--------|
 | Fewer conflicts than direct | More complex than direct |
 | Faster than fully associative | Slightly slower than direct |
@@ -153,13 +153,13 @@ CPU generates logical address (page p, offset d)
 │  TLB HIT (fast path ~1ns extra):            │
 │    frame = TLB[p]                           │
 │    physical = frame × page_size + d         │
-│    → Access memory directly ✅              │
+│    → Access memory directly               │
 ├─────────────────────────────────────────────┤
 │  TLB MISS (slow path):                      │
 │    Look up page table in RAM → get frame    │
 │    Store (p → frame) in TLB                 │
 │    physical = frame × page_size + d         │
-│    → Access memory ✅                       │
+│    → Access memory                        │
 └─────────────────────────────────────────────┘
 ```
 
@@ -203,7 +203,7 @@ When is the TLB invalidated?
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a TLB and why is it needed?**
 > The TLB (Translation Lookaside Buffer) is a small, fast hardware cache that stores recent page table entries (page number → frame number). Without TLB, paging requires two RAM accesses per memory operation (page table + actual data). TLB eliminates the first access for frequently used pages, cutting memory access time nearly in half.

@@ -1,4 +1,4 @@
-# 📄 Paging
+#  Paging
 
 ---
 
@@ -136,7 +136,7 @@ Without optimization, paging doubles memory accesses:
 
 ## Advantages & Disadvantages of Paging
 
-| ✅ Advantages | ❌ Disadvantages |
+|  Advantages |  Disadvantages |
 |--------------|----------------|
 | Eliminates external fragmentation | Internal fragmentation (last page may be partially used) |
 | Non-contiguous allocation | Page table memory overhead |
@@ -150,15 +150,15 @@ Without optimization, paging doubles memory accesses:
 | | Paging | Segmentation |
 |-|--------|-------------|
 | Division basis | Fixed size | Logical meaning (code, stack, heap) |
-| External fragmentation | ❌ No | ✅ Yes |
-| Internal fragmentation | ✅ Yes (last page) | ❌ No |
+| External fragmentation |  No |  Yes |
+| Internal fragmentation |  Yes (last page) |  No |
 | User visibility | Transparent | Visible (programmer-defined) |
 
 *(Full segmentation → see [03-Segmentation.md](./03-Segmentation.md))*
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is paging?**
 > Paging divides a process's logical address space into fixed-size pages and physical memory into same-size frames. Pages can be mapped to any free frame — they don't need to be contiguous. The OS maintains a page table mapping page numbers to frame numbers.

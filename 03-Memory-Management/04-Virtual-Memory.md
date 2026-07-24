@@ -1,4 +1,4 @@
-# 🌐 Virtual Memory & Demand Paging
+#  Virtual Memory & Demand Paging
 
 ---
 
@@ -113,7 +113,7 @@ Valid Bit              → 1 = in RAM, 0 = on disk (causes page fault)
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is virtual memory?**
 > Virtual memory is a technique where the OS creates an illusion for each process that it has a large, private address space, even if the physical RAM is smaller. Pages not currently in RAM are stored on disk (swap space) and loaded on demand when accessed.

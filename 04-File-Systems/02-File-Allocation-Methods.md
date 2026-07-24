@@ -1,4 +1,4 @@
-# 💾 File Allocation Methods
+#  File Allocation Methods
 
 ---
 
@@ -18,7 +18,7 @@ File Allocation Methods:
 
 ---
 
-## 1. 📦 Contiguous Allocation
+## 1.  Contiguous Allocation
 
 > All blocks of a file are stored **consecutively** on disk.
 
@@ -37,19 +37,19 @@ notes.txt → start=10, length=4
 → blocks 10, 11, 12, 13 belong to notes.txt
 ```
 
-### Advantages ✅
+### Advantages 
 - **Fast sequential access** — blocks are adjacent
 - **Fast random access** — block n = start + n (direct calculation)
 - Simple directory entry (just start + length)
 
-### Disadvantages ❌
+### Disadvantages 
 - **External fragmentation** — free holes scattered, large files can't fit
 - **File size must be known at creation** — hard to grow a file
 - **Inflexible** — moving or extending a file requires copying
 
 ---
 
-## 2. 🔗 Linked Allocation
+## 2.  Linked Allocation
 
 > Each block contains a **pointer to the next block**.  
 > Blocks of a file can be scattered anywhere on disk.
@@ -66,12 +66,12 @@ Block 10 → [data][→ NULL]  ← end of file
 **Directory entry** stores only: `{start_block}`  
 Each block uses part of its space to store the **next-block pointer** (e.g., 4 bytes per 512-byte block).
 
-### Advantages ✅
+### Advantages 
 - **No external fragmentation** — any free block can be used
 - **Files can grow dynamically** — just append a new block anywhere
 - No need to know file size upfront
 
-### Disadvantages ❌
+### Disadvantages 
 - **No random access** — to read block 100, must follow 99 pointers (slow!)
 - **Pointer overhead** — each block loses a few bytes to the pointer
 - **Reliability** — one broken pointer loses the rest of the file
@@ -96,7 +96,7 @@ FAT is loaded entirely in RAM → fast traversal, but RAM-hungry for large disks
 
 ---
 
-## 3. 📇 Indexed Allocation
+## 3.  Indexed Allocation
 
 > One special **index block** per file stores **all block pointers** for that file.
 
@@ -113,12 +113,12 @@ notes.txt's index block (block 4):
 
 **Directory entry** stores: `{index_block_number}`
 
-### Advantages ✅
+### Advantages 
 - **Supports random access** — index_block[n] gives block directly
 - **No external fragmentation** — blocks scattered anywhere
 - **Files can grow** — add more pointers to index block
 
-### Disadvantages ❌
+### Disadvantages 
 - **Index block overhead** — even tiny files waste an entire index block
 - **Limited file size** — one index block can only hold so many pointers
 
@@ -146,16 +146,16 @@ This is exactly how **Linux ext file systems** work (see [04-Inodes.md](./04-Ino
 
 | Feature | Contiguous | Linked | Indexed |
 |---------|-----------|--------|---------|
-| **Sequential access** | ✅ Fast | ✅ OK | ✅ OK |
-| **Random access** | ✅ Fast | ❌ Slow (follow chain) | ✅ Fast |
-| **External fragmentation** | ✅ Yes | ❌ No | ❌ No |
-| **File growth** | ❌ Hard | ✅ Easy | ✅ Easy |
+| **Sequential access** |  Fast |  OK |  OK |
+| **Random access** |  Fast |  Slow (follow chain) |  Fast |
+| **External fragmentation** |  Yes |  No |  No |
+| **File growth** |  Hard |  Easy |  Easy |
 | **Overhead** | None | Pointer per block | Index block |
 | **Used in** | CD-ROMs, DVDs | FAT (MS-DOS) | UNIX/Linux ext |
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: Compare contiguous, linked, and indexed file allocation.**
 > **Contiguous**: Files in consecutive blocks — fast access (sequential and random), but causes external fragmentation and can't grow easily. **Linked**: Each block points to the next — no fragmentation, files grow easily, but random access is O(n) slow. **Indexed**: One index block holds all pointers — no fragmentation, fast random access, but small files waste an index block. Used in Linux (inodes).

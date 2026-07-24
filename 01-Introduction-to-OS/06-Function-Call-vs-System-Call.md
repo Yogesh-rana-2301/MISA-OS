@@ -1,20 +1,20 @@
-# 📞 Function Call vs System Call
+#  Function Call vs System Call
 
 ---
 
-## 🔑 The Core Distinction
+##  The Core Distinction
 
 | | Function Call | System Call |
 |-|--------------|-------------|
 | **Stays in** | User space | Crosses into Kernel space |
-| **Mode switch** | ❌ No | ✅ Yes (User → Kernel → User) |
+| **Mode switch** |  No |  Yes (User → Kernel → User) |
 | **Who handles it** | Your program / library | OS Kernel |
 | **Speed** | Very fast (nanoseconds) | Slower (microseconds) |
 | **Examples** | `printf()`, `sqrt()`, `strlen()` | `read()`, `write()`, `fork()` |
 
 ---
 
-## 📦 User Space vs Kernel Space
+##  User Space vs Kernel Space
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -38,7 +38,7 @@
 
 ---
 
-## 🔧 Function Call — How It Works
+##  Function Call — How It Works
 
 A regular function call is **simple and fast**:
 
@@ -63,7 +63,7 @@ main() resumes
 
 ---
 
-## ⚙️ System Call — How It Works
+##  System Call — How It Works
 
 A system call involves the **OS kernel**:
 
@@ -94,7 +94,7 @@ A system call involves the **OS kernel**:
 
 ---
 
-## 📋 Common System Call Examples
+##  Common System Call Examples
 
 ### File Operations
 
@@ -126,7 +126,7 @@ A system call involves the **OS kernel**:
 
 ---
 
-## 🔍 Deep Dive: `printf()` vs `write()`
+##  Deep Dive: `printf()` vs `write()`
 
 ```
 printf("Hello\n")
@@ -146,7 +146,7 @@ printf("Hello\n")
 
 ---
 
-## 🕐 Overhead Comparison
+##  Overhead Comparison
 
 | | Function Call | System Call |
 |-|--------------|-------------|
@@ -172,7 +172,7 @@ write(fd, data, data.size());
 
 ---
 
-## 🔄 fork() — A Special System Call
+##  fork() — A Special System Call
 
 `fork()` is one of the most important system calls in UNIX:
 
@@ -205,7 +205,7 @@ if (pid == 0) {
 
 ---
 
-## 📊 Summary
+##  Summary
 
 ```
 Function Call:
@@ -223,7 +223,7 @@ App → [User Space] → SYSCALL instruction
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between a function call and a system call?**
 > A function call stays within user space and is handled by the program or library — fast and cheap. A system call crosses from user space to kernel space via a CPU trap, allowing the OS to perform privileged operations. System calls are ~100–1000× slower due to the mode switch overhead.

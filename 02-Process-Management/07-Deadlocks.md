@@ -1,4 +1,4 @@
-# 💀 Deadlocks
+#  Deadlocks
 
 ---
 
@@ -25,7 +25,7 @@ Neither A nor B can proceed. DEADLOCK!
 **ALL FOUR must hold simultaneously** for a deadlock to occur.  
 Remove ANY ONE → deadlock cannot happen.
 
-### 1. 🔒 Mutual Exclusion
+### 1.  Mutual Exclusion
 > At least one resource must be held in a **non-shareable** mode (only one process at a time).
 
 ```
@@ -36,7 +36,7 @@ Resource R can only be held by ONE process at a time.
 
 ---
 
-### 2. 🤝 Hold and Wait
+### 2.  Hold and Wait
 > A process holds at least one resource AND is waiting to acquire additional resources held by other processes.
 
 ```
@@ -47,7 +47,7 @@ Process A: holds R1, waits for R2
 
 ---
 
-### 3. 🚫 No Preemption
+### 3.  No Preemption
 > Resources cannot be forcibly taken from a process — they must be **voluntarily released**.
 
 ```
@@ -58,7 +58,7 @@ If A holds R1 and needs R2 (held by B), the OS cannot forcibly take R1 from A.
 
 ---
 
-### 4. 🔄 Circular Wait
+### 4.  Circular Wait
 > A set of processes {P1, P2, ..., Pn} such that P1 waits for a resource held by P2, P2 waits for P3, ..., Pn waits for P1.
 
 ```
@@ -91,7 +91,7 @@ Deadlock Handling
 
 ---
 
-## 1. 🛡️ Deadlock Prevention
+## 1.  Deadlock Prevention
 
 **Break at least one of the 4 necessary conditions:**
 
@@ -116,7 +116,7 @@ Process MUST acquire R1 before R2, R2 before R3, etc.
 
 ---
 
-## 2. 🧠 Deadlock Avoidance
+## 2.  Deadlock Avoidance
 
 The OS dynamically checks if granting a resource request leads to an **unsafe state**.
 
@@ -141,7 +141,7 @@ OS stays here          OS never enters here (avoidance)
 
 ---
 
-## 3. 🔍 Deadlock Detection & Recovery
+## 3.  Deadlock Detection & Recovery
 
 **Don't prevent or avoid** — let deadlocks happen, then:
 1. **Detect** the deadlock (run detection algorithm periodically)
@@ -180,7 +180,7 @@ P1 → P2 → P3 → P1    ← cycle = DEADLOCK!
 
 ---
 
-## 🦦 The Ostrich Algorithm
+##  The Ostrich Algorithm
 
 Most **general-purpose OSes** (Windows, Linux) use the **"Ostrich Algorithm"**:
 
@@ -190,7 +190,7 @@ Most **general-purpose OSes** (Windows, Linux) use the **"Ostrich Algorithm"**:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a deadlock?**
 > A deadlock is a situation where a group of processes are permanently blocked, each holding a resource and waiting for a resource held by another process in the group. No process can proceed.

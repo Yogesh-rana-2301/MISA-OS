@@ -1,4 +1,4 @@
-# 📅 CPU Scheduling Algorithms
+#  CPU Scheduling Algorithms
 
 ---
 
@@ -9,7 +9,7 @@ The **CPU Scheduler** makes this decision.
 
 ---
 
-## 📐 Key Metrics (Know These Cold)
+##  Key Metrics (Know These Cold)
 
 | Term | Formula | Meaning |
 |------|---------|---------|
@@ -24,7 +24,7 @@ The **CPU Scheduler** makes this decision.
 
 ---
 
-## 1. 📋 FCFS — First Come First Served
+## 1.  FCFS — First Come First Served
 
 ### How It Works
 Processes are executed in the **order they arrive**. Non-preemptive.
@@ -58,10 +58,10 @@ Processes are executed in the **order they arrive**. Non-preemptive.
 
 | Property | Detail |
 |----------|--------|
-| Preemptive? | ❌ No |
-| Simple? | ✅ Very easy to implement |
-| Convoy Effect | ✅ Yes — short jobs wait behind long ones |
-| Starvation | ❌ No — everyone eventually runs |
+| Preemptive? |  No |
+| Simple? |  Very easy to implement |
+| Convoy Effect |  Yes — short jobs wait behind long ones |
+| Starvation |  No — everyone eventually runs |
 
 ### Convoy Effect
 ```
@@ -72,7 +72,7 @@ Short jobs P2, P3, P4 (BT=1 each) arrive at t=1
 
 ---
 
-## 2. ⚡ SJF — Shortest Job First
+## 2.  SJF — Shortest Job First
 
 ### How It Works
 The process with the **shortest Burst Time** runs next.  
@@ -140,13 +140,13 @@ t=17: P4 done
 | Property | Detail |
 |----------|--------|
 | Preemptive? | Optional |
-| Optimal? | ✅ Minimum avg WT (non-preemptive) |
-| Starvation | ✅ Yes — long jobs may never run |
+| Optimal? |  Minimum avg WT (non-preemptive) |
+| Starvation |  Yes — long jobs may never run |
 | Problem | BT not known in advance (CPU burst prediction needed) |
 
 ---
 
-## 3. 🔄 Round Robin (RR)
+## 3.  Round Robin (RR)
 
 ### How It Works
 Each process gets a fixed **time quantum (q)**. After q, it goes back to the end of the Ready queue. **Preemptive**.
@@ -193,14 +193,14 @@ Ready queue: P1(5) → P2(3) → P3(4)
 
 | Property | Detail |
 |----------|--------|
-| Preemptive? | ✅ Yes |
-| Starvation | ❌ No — everyone gets equal turns |
-| Response time | ✅ Good for interactive systems |
+| Preemptive? |  Yes |
+| Starvation |  No — everyone gets equal turns |
+| Response time |  Good for interactive systems |
 | Overhead | More context switches |
 
 ---
 
-## 4. 🏆 Priority Scheduling
+## 4.  Priority Scheduling
 
 ### How It Works
 Each process has a **priority**. Highest priority runs first.  
@@ -234,19 +234,88 @@ Low-priority processes may **never run** if high-priority processes keep arrivin
 
 ---
 
-## 📊 Algorithm Comparison Table
+## 5. Multilevel Queue Scheduling (MLQ)
 
-| Algorithm | Preemptive | Starvation | Avg WT | Overhead | Best For |
-|-----------|-----------|-----------|--------|----------|----------|
-| FCFS | ❌ | ❌ | High | Low | Simple batch jobs |
-| SJF (non-pre) | ❌ | ✅ | Minimum | Low | Known burst times |
-| SRTF (pre-SJF) | ✅ | ✅ | Optimal | Medium | Minimizing wait time |
-| Round Robin | ✅ | ❌ | Medium | High | Interactive systems |
-| Priority | Both | ✅ (low pri) | Medium | Medium | Real-time, prioritized |
+> Processes are permanently assigned to a **fixed queue** based on their type. Each queue has its own scheduling algorithm and its own priority.
+
+```
+Queue 0 (Highest priority) — System processes      → FCFS
+Queue 1                    — Interactive processes  → Round Robin
+Queue 2                    — Batch processes        → SJF
+Queue 3 (Lowest priority)  — Background jobs        → FCFS
+
+CPU always picks from Queue 0 first.
+Queue 1 only gets CPU when Queue 0 is empty.
+Queue 2 only gets CPU when Queue 0 and Queue 1 are empty.
+```
+
+- **Fixed assignment** — a process cannot move between queues
+- **No starvation handling** — low-priority queues may starve if high-priority queues are always busy
+- Simple to implement — each queue independently scheduled
+
+| Characteristic | Detail |
+|---------------|--------|
+| Queue assignment | Permanent (fixed by process type) |
+| Between-queue scheduling | Priority-based (strict or time-sliced) |
+| Starvation | Possible for low-priority queues |
 
 ---
 
-## 🎯 Interview Questions & Answers
+## 6. Multilevel Feedback Queue Scheduling (MLFQ)
+
+> Like MLQ, but processes **can move between queues** based on their CPU usage behavior. CPU-bound processes are demoted; I/O-bound processes are promoted.
+
+```
+Queue 0: Round Robin (q=8ms)    ← highest priority, short quantum
+Queue 1: Round Robin (q=16ms)   ← medium priority
+Queue 2: FCFS                   ← lowest priority, unlimited quantum
+
+New process enters Queue 0.
+
+If it uses full 8ms quantum without blocking:
+  → Demoted to Queue 1 (suspected CPU-bound)
+
+If it uses full 16ms in Queue 1:
+  → Demoted to Queue 2 (confirmed CPU-bound, gets FCFS)
+
+If it blocks for I/O before quantum expires:
+  → Stays in same queue or promoted (I/O-bound, responsive)
+```
+
+### Key Parameters
+
+| Parameter | Description |
+|-----------|-------------|
+| Number of queues | Typically 3–8 |
+| Scheduling within each queue | Usually Round Robin (top queues), FCFS (bottom) |
+| Demotion rule | If process uses full quantum → move to lower queue |
+| Promotion rule | If process waits too long → move to higher queue (aging) |
+| Quantum per queue | Increases at lower queues (2x rule common) |
+
+### Why MLFQ is Powerful
+
+- Short, interactive processes (I/O-bound) stay in high-priority queues → fast response
+- Long CPU-bound jobs sink to low-priority queues → don't starve interactive jobs
+- Aging prevents starvation of CPU-bound processes
+- No need to know burst time in advance (unlike SJF)
+
+---
+
+## Algorithm Comparison Table
+
+| Algorithm | Preemptive | Starvation | Avg WT | Best For |
+|-----------|-----------|-----------|--------|----------|
+| FCFS | No | No | High | Simple batch |
+| SJF (non-pre) | No | Yes | Minimum | Known burst times |
+| SRTF | Yes | Yes | Optimal | Minimize wait time |
+| Round Robin | Yes | No | Medium | Interactive systems |
+| Priority | Both | Yes (low) | Medium | Real-time |
+| MLQ | Both | Yes (low queues) | Varies | Fixed process categories |
+| MLFQ | Yes | No (with aging) | Good | General purpose OS |
+
+---
+
+## Interview Questions & Answers
 
 **Q: Which scheduling algorithm gives minimum average waiting time?**
 > SJF (Shortest Job First) / SRTF gives provably minimum average waiting time. However, it requires knowing burst time in advance, which is not always possible.
@@ -260,8 +329,11 @@ Low-priority processes may **never run** if high-priority processes keep arrivin
 **Q: What is the trade-off in choosing time quantum for Round Robin?**
 > Small q = better response time but more context switch overhead. Large q = less overhead but poor response time (degenerates to FCFS). Optimal q should be slightly larger than a typical CPU burst.
 
-**Q: What is the difference between preemptive and non-preemptive scheduling?**
-> Preemptive: The OS can interrupt a running process (via timer or higher-priority arrival). Non-preemptive: A process runs until it voluntarily gives up the CPU (completes or blocks on I/O).
+**Q: What is the difference between MLQ and MLFQ?**
+> In MLQ, processes are permanently assigned to a fixed queue based on type and cannot move between queues — a batch job stays in the batch queue forever. In MLFQ, processes dynamically move between queues based on behavior: CPU-bound processes get demoted to lower-priority queues, I/O-bound processes stay in higher-priority queues. MLFQ is more adaptive and is used in most real OSes (Windows, macOS, Linux).
+
+**Q: Why is MLFQ considered the best general-purpose scheduler?**
+> MLFQ doesn't require knowing burst times (unlike SJF), prevents starvation through aging, gives fast response to interactive I/O-bound processes, and allows long CPU-bound jobs to complete without disrupting interactive work. It approximates the behavior of SJF without needing future knowledge.
 
 ---
 

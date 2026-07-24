@@ -1,10 +1,10 @@
-# 🖥️ Topic 1 — Introduction to Operating Systems
+#  Topic 1 — Introduction to Operating Systems
 
 > **Goal**: Build a solid conceptual foundation for all OS interview questions.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -17,7 +17,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] What does an OS do? (5 main functions)
 - [ ] Difference between batch, time-sharing, real-time, distributed OS
@@ -29,7 +29,7 @@
 
 ---
 
-## 🎯 Expected Interview Questions from This Topic
+##  Expected Interview Questions from This Topic
 
 1. What is an operating system? Why do we need one?
 2. Explain process states with a diagram.

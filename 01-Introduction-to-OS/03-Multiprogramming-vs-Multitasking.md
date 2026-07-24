@@ -1,14 +1,14 @@
-# ⚡ Multiprogramming vs Multitasking
+#  Multiprogramming vs Multitasking
 
 ---
 
-## 🔑 Core Idea
+##  Core Idea
 
 Both concepts aim to **keep the CPU busy** and avoid wasted time. But they solve different problems.
 
 ---
 
-## 📖 Definitions
+##  Definitions
 
 ### Multiprogramming
 
@@ -46,7 +46,7 @@ Multitasking with time quantum = 20ms:
 
 ---
 
-## ⚔️ Key Differences
+##  Key Differences
 
 | Feature | Multiprogramming | Multitasking |
 |---------|----------------|-------------|
@@ -61,7 +61,7 @@ Multitasking with time quantum = 20ms:
 
 ---
 
-## 📈 CPU Utilization Concept
+##  CPU Utilization Concept
 
 **CPU Utilization** = percentage of time the CPU is doing useful work.
 
@@ -88,7 +88,7 @@ CPU Utilization ≈ 1 - p^n
 
 ---
 
-## 🧵 Related Concepts
+##  Related Concepts
 
 ### Multiprocessing
 
@@ -114,7 +114,7 @@ Core 2: P2──────P2──────   ← TRUE parallel execution
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between multiprogramming and multitasking?**
 > Multiprogramming keeps multiple programs in memory and switches the CPU when one blocks on I/O — it's about CPU utilization. Multitasking uses time slices to switch between processes rapidly, enabling interactive responsiveness.

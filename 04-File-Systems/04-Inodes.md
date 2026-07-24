@@ -1,4 +1,4 @@
-# 📋 Inodes (Index Nodes)
+#  Inodes (Index Nodes)
 
 ---
 
@@ -47,8 +47,8 @@ Inode 1234:
 | **Inode number** | Unique identifier within the file system |
 
 ### What an Inode Does NOT Store
-- ❌ File name (stored in directory)
-- ❌ Path (stored in directory)
+-  File name (stored in directory)
+-  Path (stored in directory)
 
 ---
 
@@ -132,14 +132,14 @@ Deleting notes.txt → shortcut.txt becomes a DANGLING link (broken)
 
 | | Hard Link | Soft Link |
 |-|-----------|-----------|
-| Same inode? | ✅ Yes | ❌ No (new inode) |
-| Works across file systems? | ❌ No | ✅ Yes |
+| Same inode? |  Yes |  No (new inode) |
+| Works across file systems? |  No |  Yes |
 | If original deleted | File still accessible | Broken link |
-| Can link directories? | ❌ No (usually) | ✅ Yes |
+| Can link directories? |  No (usually) |  Yes |
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is an inode?**
 > An inode is a data structure in Unix/Linux file systems that stores all metadata about a file — type, permissions, owner, size, timestamps, and disk block pointers — but NOT the file name. The file name is stored in the directory, which maps names to inode numbers.

@@ -1,10 +1,10 @@
-# 🧠 Topic 3 — Memory Management
+#  Topic 3 — Memory Management
 
 > **Goal**: Understand how the OS manages RAM — one of the most heavily tested areas in OS interviews.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] First Fit vs Best Fit vs Worst Fit — when to use which?
 - [ ] Internal vs External fragmentation — with examples
@@ -35,7 +35,7 @@
 
 ---
 
-## 🎯 Top Interview Questions from This Topic
+##  Top Interview Questions from This Topic
 
 1. What is the difference between internal and external fragmentation?
 2. How does paging work? How is a logical address translated to a physical address?

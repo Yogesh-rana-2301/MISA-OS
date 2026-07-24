@@ -1,4 +1,4 @@
-# 📦 Memory Allocation Techniques
+#  Memory Allocation Techniques
 
 ---
 
@@ -22,7 +22,7 @@ When a new process of size X arrives, which hole do we pick?
 
 ## Three Allocation Strategies
 
-### 1. 🟢 First Fit
+### 1.  First Fit
 > Allocate the **first hole that is big enough**.
 
 - Scan from the beginning of the list
@@ -35,12 +35,12 @@ First Fit picks: 30K hole (first one ≥ 12K)
 Remaining hole: 18K
 ```
 
-**✅ Pros**: Fast — minimal scanning  
-**❌ Cons**: Leaves many small unusable fragments at the start of memory
+** Pros**: Fast — minimal scanning  
+** Cons**: Leaves many small unusable fragments at the start of memory
 
 ---
 
-### 2. 🔵 Best Fit
+### 2.  Best Fit
 > Allocate the **smallest hole that is big enough**.
 
 - Scan entire list
@@ -53,12 +53,12 @@ Best Fit picks: 13K hole (closest match)
 Remaining hole: 1K
 ```
 
-**✅ Pros**: Minimizes wasted space per allocation  
-**❌ Cons**: Creates tiny leftover fragments that are often unusable; slower (full scan)
+** Pros**: Minimizes wasted space per allocation  
+** Cons**: Creates tiny leftover fragments that are often unusable; slower (full scan)
 
 ---
 
-### 3. 🔴 Worst Fit
+### 3.  Worst Fit
 > Allocate the **largest available hole**.
 
 - Scan entire list
@@ -71,8 +71,30 @@ Worst Fit picks: 30K hole
 Remaining hole: 18K (still usefully large!)
 ```
 
-**✅ Pros**: Leftover fragment is large enough to be useful for future processes  
-**❌ Cons**: Wastes large holes; slowest in practice
+** Pros**: Leftover fragment is large enough to be useful for future processes  
+** Cons**: Wastes large holes; slowest in practice
+
+---
+
+### 4. Next Fit
+> Like First Fit, but starts scanning from **where the last allocation was made** instead of the beginning.
+
+- Maintains a "roving pointer" to the last allocated position
+- Distributes allocations more evenly across memory
+- Avoids the clustering of small fragments at the start that First Fit causes
+
+```
+Free holes: [30K at pos 0, 5K at pos 50, 15K at pos 80]
+Last allocation was at pos 50.
+
+Next Fit scans FROM pos 50:
+  5K hole — too small for 12K request
+  15K hole at pos 80 — fits! Picks this one.
+  Remaining hole: 3K at pos 80
+```
+
+** Pros**: Avoids re-scanning from beginning; more even memory utilization  
+** Cons**: Can miss better-fit holes earlier in the list; similar fragmentation to First Fit
 
 ---
 
@@ -80,11 +102,12 @@ Remaining hole: 18K (still usefully large!)
 
 | Strategy | Speed | Fragment Size | Best When |
 |----------|-------|--------------|-----------|
-| **First Fit** | ✅ Fast | Medium | General purpose |
-| **Best Fit** | ❌ Slow | Tiny (wastes!) | When sizes are predictable |
-| **Worst Fit** | ❌ Slow | Large (reusable) | When future requests are large |
+| **First Fit** |  Fast | Medium | General purpose |
+| **Best Fit** |  Slow | Tiny (wastes!) | When sizes are predictable |
+| **Worst Fit** |  Slow | Large (reusable) | When future requests are large |
+| **Next Fit** | Fast | Medium | Avoiding clustering at start |
 
-> **Interview answer**: First Fit is generally considered the best in practice — fast and good average performance.
+> **Interview answer**: First Fit is generally considered the best in practice — fast and good average performance. Next Fit distributes fragmentation more evenly.
 
 ---
 
@@ -95,7 +118,7 @@ There are two kinds — know both clearly.
 
 ---
 
-### 🔴 External Fragmentation
+###  External Fragmentation
 
 > **Total free memory is enough, but it's scattered in non-contiguous pieces** that can't satisfy a large request.
 
@@ -113,7 +136,7 @@ But no contiguous 15K block exists!
 
 ---
 
-### 🟡 Internal Fragmentation
+###  Internal Fragmentation
 
 > **Allocated memory is larger than what the process actually needs** — the extra space inside the allocated block is wasted.
 
@@ -140,7 +163,7 @@ Wasted inside: 2K  ← Internal Fragmentation
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between First Fit, Best Fit, and Worst Fit?**
 > First Fit allocates the first hole large enough (fast). Best Fit allocates the smallest sufficient hole (minimizes waste per allocation but creates tiny unusable fragments). Worst Fit allocates the largest hole (leftover is large and reusable). First Fit performs best in practice.

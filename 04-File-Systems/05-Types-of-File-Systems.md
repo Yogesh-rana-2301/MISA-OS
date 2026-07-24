@@ -1,4 +1,4 @@
-# 🗃️ Types of File Systems
+#  Types of File Systems
 
 ---
 
@@ -14,7 +14,7 @@ Different OSes and use cases use different file systems. For interviews, know th
 
 ---
 
-## 1. 📂 FAT — File Allocation Table
+## 1.  FAT — File Allocation Table
 
 ### Variants
 
@@ -48,9 +48,9 @@ File "B" starts at cluster 3:
 |---------|--------|
 | Allocation | Linked (via FAT table) |
 | Max file size | 4GB (FAT32 — 32-bit cluster number) |
-| Journaling | ❌ No (data loss risk on crash) |
-| Permissions | ❌ No (no access control) |
-| Cross-platform | ✅ Excellent (Windows, Mac, Linux all support it) |
+| Journaling |  No (data loss risk on crash) |
+| Permissions |  No (no access control) |
+| Cross-platform |  Excellent (Windows, Mac, Linux all support it) |
 | Use case | USB drives, SD cards, compatibility |
 
 ### FAT32 Limitation: 4GB Max File Size
@@ -63,7 +63,7 @@ With 32KB cluster size → 2^28 × 32KB = 8TB volume, but max file = 4GB (2^32 b
 
 ---
 
-## 2. 🪟 NTFS — New Technology File System
+## 2.  NTFS — New Technology File System
 
 Windows' primary file system since Windows NT (1993).
 
@@ -74,12 +74,12 @@ Windows' primary file system since Windows NT (1993).
 | Allocation | B+ tree based (Master File Table) |
 | Max file size | 16EB (theoretical) |
 | Max volume | 256TB |
-| Journaling | ✅ Yes (metadata + optional data journaling) |
-| Permissions | ✅ Full ACL (Access Control Lists) |
-| Encryption | ✅ EFS (Encrypting File System) |
-| Compression | ✅ Per-file/folder compression |
-| Hard links | ✅ Yes |
-| Symbolic links | ✅ Yes |
+| Journaling |  Yes (metadata + optional data journaling) |
+| Permissions |  Full ACL (Access Control Lists) |
+| Encryption |  EFS (Encrypting File System) |
+| Compression |  Per-file/folder compression |
+| Hard links |  Yes |
+| Symbolic links |  Yes |
 
 ### Master File Table (MFT)
 
@@ -109,7 +109,7 @@ On crash:
 
 ---
 
-## 3. 🐧 ext — Extended File System (Linux)
+## 3.  ext — Extended File System (Linux)
 
 ### Variants
 
@@ -124,11 +124,11 @@ On crash:
 | Feature | Detail |
 |---------|--------|
 | Allocation | Inode-based (indexed allocation) |
-| Journaling | ✅ Yes (3 modes: journal, ordered, writeback) |
+| Journaling |  Yes (3 modes: journal, ordered, writeback) |
 | Extents | Replaces block pointers with extent trees (contiguous block ranges) |
 | Max file size | 16TB |
 | Delayed allocation | Writes gathered in RAM, then flushed (reduces fragmentation) |
-| Permissions | ✅ POSIX permissions + ACLs |
+| Permissions |  POSIX permissions + ACLs |
 
 ### ext4 Extents (Improvement over ext2/3)
 
@@ -152,15 +152,15 @@ For a 1GB file: ext2 needs 262,144 pointers; ext4 needs FAR fewer extents
 | **OS** | All (cross-platform) | Windows | Linux |
 | **Max File Size** | 4GB | 16EB | 16TB |
 | **Max Volume** | 2TB | 256TB | 1EB |
-| **Journaling** | ❌ No | ✅ Yes | ✅ Yes |
-| **Permissions** | ❌ No | ✅ ACLs | ✅ POSIX |
-| **Encryption** | ❌ No | ✅ EFS | ✅ (dm-crypt) |
-| **Fragmentation** | ✅ High | ❌ Low | ❌ Low |
+| **Journaling** |  No |  Yes |  Yes |
+| **Permissions** |  No |  ACLs |  POSIX |
+| **Encryption** |  No |  EFS |  (dm-crypt) |
+| **Fragmentation** |  High |  Low |  Low |
 | **Use Case** | USB drives | Windows system drives | Linux system drives |
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between FAT32, NTFS, and ext4?**
 > FAT32 is a simple linked-allocation file system supported by all OSes — no journaling, no permissions, max 4GB file size. Used for flash drives and compatibility. NTFS is Windows' primary FS with ACL permissions, journaling, encryption, and supports huge files. ext4 is Linux's primary FS with inode-based allocation, extents, journaling, and POSIX permissions.

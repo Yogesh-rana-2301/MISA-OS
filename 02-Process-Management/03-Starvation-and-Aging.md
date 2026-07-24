@@ -1,4 +1,4 @@
-# 🍽️ Starvation & Aging
+#  Starvation & Aging
 
 ---
 
@@ -78,8 +78,8 @@ OR:
 
 | Property | Detail |
 |----------|--------|
-| **Prevents starvation** | ✅ Every process eventually reaches highest priority |
-| **Fair** | ✅ Long-waiting processes get priority boost |
+| **Prevents starvation** |  Every process eventually reaches highest priority |
+| **Fair** |  Long-waiting processes get priority boost |
 | **Complexity** | Slight overhead to recalculate priorities |
 | **Used in** | Linux nice values (partial aging), Windows thread priority boost |
 
@@ -101,7 +101,7 @@ bonus increases as process waits longer without CPU time
 
 ---
 
-## 🔁 Other Solutions to Starvation
+##  Other Solutions to Starvation
 
 | Solution | How |
 |----------|-----|
@@ -112,7 +112,7 @@ bonus increases as process waits longer without CPU time
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is starvation in operating systems?**
 > Starvation occurs when a process is indefinitely denied CPU time because other processes always get priority. It happens in SJF (long jobs never run if short jobs keep arriving) and priority scheduling (low-priority processes never run if high-priority ones keep arriving).

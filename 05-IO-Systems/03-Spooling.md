@@ -1,4 +1,4 @@
-# 🖨️ Spooling
+#  Spooling
 
 ---
 
@@ -58,7 +58,7 @@ Process C: "Print C.pdf"  ─┘
                                reads jobs one by one
                                         │
                                         ▼
-                                    🖨️ PRINTER
+                                     PRINTER
                                (prints A, then B, then C)
 ```
 
@@ -84,7 +84,7 @@ ls /var/spool/cups/
 2. OS writes print data to spool file on disk
    (fast — disk write, not printer speed)
         │
-3. Process gets control back immediately ✅
+3. Process gets control back immediately 
         │
 4. Spool daemon (background process) monitors spool dir
         │
@@ -116,11 +116,11 @@ Spooling isn't just for printers — it's a general pattern:
 
 | Use Case | Spool |
 |----------|-------|
-| 🖨️ Printing | Print queue (`/var/spool/cups/`) |
-| 📧 Email | Mail queue (`/var/spool/mail/`) — outgoing emails buffered |
-| 📠 Fax | Fax queue |
-| 🏭 Batch jobs | Job queue in batch OS |
-| 📺 Video streaming | Buffer (pre-loaded video frames = video spool) |
+|  Printing | Print queue (`/var/spool/cups/`) |
+|  Email | Mail queue (`/var/spool/mail/`) — outgoing emails buffered |
+|  Fax | Fax queue |
+|  Batch jobs | Job queue in batch OS |
+|  Video streaming | Buffer (pre-loaded video frames = video spool) |
 
 ---
 
@@ -132,11 +132,11 @@ Spooling isn't just for printers — it's a general pattern:
 | **Purpose** | Decouple producer/consumer speeds | Smooth out speed mismatch | Speed up repeated access |
 | **Size** | Large (persistent) | Small (temporary) | Medium |
 | **Example** | Print queue | Network receive buffer | TLB, CPU cache |
-| **Data reused?** | ❌ Consumed once | ❌ Consumed once | ✅ Reused multiple times |
+| **Data reused?** |  Consumed once |  Consumed once |  Reused multiple times |
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is spooling?**
 > Spooling (Simultaneous Peripheral Operations On-Line) is a technique where data for a slow I/O device is stored in an intermediate buffer on disk (the spool). The producing process writes to the spool quickly and continues without waiting for the slow device. A background daemon handles sending the queued data to the device.

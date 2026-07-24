@@ -1,4 +1,4 @@
-# 🚧 Blocking vs Non-blocking I/O
+#  Blocking vs Non-blocking I/O
 
 ---
 
@@ -45,7 +45,7 @@ CPU:     [busy]  [free for other processes ][busy]
 | Property | Detail |
 |----------|--------|
 | Process state during wait | WAITING (blocked) |
-| CPU during wait | Given to other processes ✅ |
+| CPU during wait | Given to other processes  |
 | Programming model | Simple — linear code flow |
 | Result availability | Guaranteed when function returns |
 | Use case | Traditional server code, simple scripts |
@@ -73,8 +73,8 @@ Process A calls read(fd, buffer, 1024)   // fd set to O_NONBLOCK
     │
     ▼
 Immediately returns:
-  - Data ready?   → returns data ✅
-  - Data NOT ready? → returns -1 with errno = EAGAIN ❌
+  - Data ready?   → returns data 
+  - Data NOT ready? → returns -1 with errno = EAGAIN 
     │
     ▼
 Process continues running (NOT blocked!)
@@ -96,7 +96,7 @@ CPU:     [always busy with this process]
 | Property | Detail |
 |----------|--------|
 | Process state during wait | RUNNING (never blocks) |
-| CPU during wait | Consumed by this process checking ✅/❌ |
+| CPU during wait | Consumed by this process checking / |
 | Programming model | Complex — must handle partial/no data |
 | Result availability | Must poll or use callbacks |
 | Use case | Event loops, high-performance servers (Node.js) |
@@ -122,10 +122,10 @@ while True:
 
 | Feature | Blocking | Non-blocking |
 |---------|---------|-------------|
-| **Process suspends?** | ✅ Yes | ❌ No |
-| **Returns immediately?** | ❌ No | ✅ Yes (with EAGAIN if not ready) |
-| **CPU efficiency** | ✅ Good (CPU free for others) | ❌ May busy-wait |
-| **Code complexity** | ✅ Simple | ❌ Complex |
+| **Process suspends?** |  Yes |  No |
+| **Returns immediately?** |  No |  Yes (with EAGAIN if not ready) |
+| **CPU efficiency** |  Good (CPU free for others) |  May busy-wait |
+| **Code complexity** |  Simple |  Complex |
 | **Concurrency model** | Thread per connection | Event loop / select/poll/epoll |
 | **Example** | Traditional web server (Apache) | Node.js, Nginx |
 
@@ -148,7 +148,7 @@ This is how Nginx serves thousands of connections with very few threads.
 
 ---
 
-## ⚠️ Common Interview Trap
+##  Common Interview Trap
 
 > **Blocking ≠ Synchronous**  
 > **Non-blocking ≠ Asynchronous**
@@ -164,7 +164,7 @@ See [02-Synchronous-vs-Asynchronous.md](./02-Synchronous-vs-Asynchronous.md) for
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is blocking I/O?**
 > In blocking I/O, the calling process is suspended (enters WAITING state) until the I/O operation completes. The OS gives the CPU to other processes during the wait. When data is ready, the process is moved back to READY. Simple to program but one thread can only handle one I/O at a time.

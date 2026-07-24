@@ -1,4 +1,4 @@
-# ☠️ Common Security Threats
+#  Common Security Threats
 
 ---
 
@@ -12,7 +12,7 @@
 
 ---
 
-## 1. 🦠 Malware (Malicious Software)
+## 1.  Malware (Malicious Software)
 
 > **Malware is any software designed to harm, exploit, or gain unauthorized access to a system.**
 
@@ -88,16 +88,16 @@ Achieving root/admin access + hiding = rootkit.
 
 | Type | Self-replicates? | Needs host? | Primary Effect |
 |------|----------------|-------------|----------------|
-| Virus | ✅ (infects files) | ✅ Yes | File corruption, spread |
-| Worm | ✅ (over network) | ❌ No | Network spread, resource drain |
-| Trojan | ❌ No | ❌ No | Backdoor, data theft |
-| Ransomware | ❌/✅ Varies | ❌ No | File encryption, extortion |
-| Spyware | ❌ No | ❌ No | Data theft, surveillance |
-| Rootkit | ❌ No | ❌ No | Persistence, hiding |
+| Virus |  (infects files) |  Yes | File corruption, spread |
+| Worm |  (over network) |  No | Network spread, resource drain |
+| Trojan |  No |  No | Backdoor, data theft |
+| Ransomware | / Varies |  No | File encryption, extortion |
+| Spyware |  No |  No | Data theft, surveillance |
+| Rootkit |  No |  No | Persistence, hiding |
 
 ---
 
-## 2. 🎣 Phishing
+## 2.  Phishing
 
 > **A social engineering attack that tricks users into revealing sensitive information (credentials, financial info) by impersonating a trusted entity.**
 
@@ -123,12 +123,12 @@ Attack flow:
 
 ### Signs of a Phishing Email
 ```
-❌ Urgent language: "Act NOW or your account will be deleted!"
-❌ Suspicious sender: support@paypa1.com (note the "1")
-❌ Hover over link: shows different URL than displayed
-❌ Poor grammar/spelling
-❌ Asking for password via email (legitimate services never do this)
-❌ Generic greeting: "Dear Customer" instead of your name
+ Urgent language: "Act NOW or your account will be deleted!"
+ Suspicious sender: support@paypa1.com (note the "1")
+ Hover over link: shows different URL than displayed
+ Poor grammar/spelling
+ Asking for password via email (legitimate services never do this)
+ Generic greeting: "Dear Customer" instead of your name
 ```
 
 ### CIA Violation
@@ -142,7 +142,7 @@ Attack flow:
 
 ---
 
-## 3. 💥 DoS & DDoS Attacks
+## 3.  DoS & DDoS Attacks
 
 ### DoS — Denial of Service
 
@@ -156,7 +156,7 @@ Legit User 3 ──→┘
 
 DoS Attack:
 Attacker ──→ 10,000 requests/second ──→ Server OVERWHELMED → crashes
-Legit users: service unavailable ❌
+Legit users: service unavailable 
 ```
 
 **CIA Violation**: **Availability** — service goes down
@@ -230,16 +230,16 @@ SYN Flood:
 
 | Threat | Confidentiality | Integrity | Availability |
 |--------|:--------------:|:---------:|:------------:|
-| **Virus** | Partial | ✅ Violated | Partial |
-| **Worm** | Partial | Partial | ✅ Violated |
-| **Ransomware** | — | ✅ Violated | ✅ Violated |
-| **Phishing** | ✅ Violated | — | — |
-| **DoS/DDoS** | — | — | ✅ Violated |
-| **Keylogger** | ✅ Violated | — | — |
+| **Virus** | Partial |  Violated | Partial |
+| **Worm** | Partial | Partial |  Violated |
+| **Ransomware** | — |  Violated |  Violated |
+| **Phishing** |  Violated | — | — |
+| **DoS/DDoS** | — | — |  Violated |
+| **Keylogger** |  Violated | — | — |
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between a virus and a worm?**
 > A virus attaches itself to a host file and replicates when the infected file is executed — it needs human action to spread. A worm self-replicates and spreads automatically across networks without human intervention or a host file. Worms are generally more dangerous due to their autonomous propagation.

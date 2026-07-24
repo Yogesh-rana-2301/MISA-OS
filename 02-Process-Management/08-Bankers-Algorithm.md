@@ -1,4 +1,4 @@
-# 🏦 Banker's Algorithm
+#  Banker's Algorithm
 
 ---
 
@@ -12,7 +12,7 @@ The **Banker's Algorithm** is a **deadlock avoidance** algorithm developed by Di
 
 ---
 
-## 📋 Data Structures
+##  Data Structures
 
 For **n processes** and **m resource types**:
 
@@ -29,7 +29,7 @@ Need[i][j] = Max[i][j] − Allocation[i][j]
 
 ---
 
-## 🧮 Worked Example
+##  Worked Example
 
 ### Setup
 
@@ -73,7 +73,7 @@ Need[i][j] = Max[i][j] − Allocation[i][j]
 
 ---
 
-## 🔍 Safety Algorithm — Step by Step
+##  Safety Algorithm — Step by Step
 
 **Goal**: Find a safe sequence (an order in which all processes can finish).
 
@@ -92,8 +92,8 @@ Need[i][j] = Max[i][j] − Allocation[i][j]
      Work = Work + Allocation[i]   // Process i finishes, releases resources
      Finish[i] = true
 
-4. If Finish[i] == true for all i → SAFE STATE ✅
-   Else → UNSAFE STATE ❌
+4. If Finish[i] == true for all i → SAFE STATE 
+   Else → UNSAFE STATE 
 ```
 
 ### Trace
@@ -102,41 +102,41 @@ Need[i][j] = Max[i][j] − Allocation[i][j]
 
 ```
 Step 1: Find process with Need ≤ Work (3,3,2):
-  P0: Need=(7,4,3) > (3,3,2) ❌
-  P1: Need=(1,2,2) ≤ (3,3,2) ✅ → Pick P1
+  P0: Need=(7,4,3) > (3,3,2) 
+  P1: Need=(1,2,2) ≤ (3,3,2)  → Pick P1
       Work = (3,3,2) + (2,0,0) = (5,3,2)
       Finish[P1] = true
 
 Step 2: Work=(5,3,2), Finish=[F,T,F,F,F]
-  P0: Need=(7,4,3) > (5,3,2) ❌
-  P2: Need=(6,0,0) > (5,3,2) ❌  (6 > 5 for A)
-  P3: Need=(0,1,1) ≤ (5,3,2) ✅ → Pick P3
+  P0: Need=(7,4,3) > (5,3,2) 
+  P2: Need=(6,0,0) > (5,3,2)   (6 > 5 for A)
+  P3: Need=(0,1,1) ≤ (5,3,2)  → Pick P3
       Work = (5,3,2) + (2,1,1) = (7,4,3)
       Finish[P3] = true
 
 Step 3: Work=(7,4,3), Finish=[F,T,F,T,F]
-  P0: Need=(7,4,3) ≤ (7,4,3) ✅ → Pick P0
+  P0: Need=(7,4,3) ≤ (7,4,3)  → Pick P0
       Work = (7,4,3) + (0,1,0) = (7,5,3)
       Finish[P0] = true
 
 Step 4: Work=(7,5,3), Finish=[T,T,F,T,F]
-  P2: Need=(6,0,0) ≤ (7,5,3) ✅ → Pick P2
+  P2: Need=(6,0,0) ≤ (7,5,3)  → Pick P2
       Work = (7,5,3) + (3,0,2) = (10,5,5)
       Finish[P2] = true
 
 Step 5: Work=(10,5,5), Finish=[T,T,T,T,F]
-  P4: Need=(4,3,1) ≤ (10,5,5) ✅ → Pick P4
+  P4: Need=(4,3,1) ≤ (10,5,5)  → Pick P4
       Work = (10,5,5) + (0,0,2) = (10,5,7)
       Finish[P4] = true
 ```
 
-**Safe Sequence: P1 → P3 → P0 → P2 → P4 ✅**
+**Safe Sequence: P1 → P3 → P0 → P2 → P4 **
 
 All Finish[i] = true → System is in a **SAFE STATE**.
 
 ---
 
-## 🤔 Resource Request Algorithm
+##  Resource Request Algorithm
 
 When a process Pi requests resources **Request[i]**:
 
@@ -153,8 +153,8 @@ When a process Pi requests resources **Request[i]**:
        Need[i]    = Need[i]    − Request[i]
 
 4. Run Safety Algorithm:
-       If result is SAFE  → grant the request ✅
-       If result is UNSAFE → rollback step 3, make Pi wait ❌
+       If result is SAFE  → grant the request 
+       If result is UNSAFE → rollback step 3, make Pi wait 
 ```
 
 ### Example Request
@@ -162,15 +162,15 @@ When a process Pi requests resources **Request[i]**:
 P1 requests (1, 0, 2):
 
 ```
-Check 1: (1,0,2) ≤ Need[P1]=(1,2,2)? ✅
-Check 2: (1,0,2) ≤ Available=(3,3,2)? ✅
+Check 1: (1,0,2) ≤ Need[P1]=(1,2,2)? 
+Check 2: (1,0,2) ≤ Available=(3,3,2)? 
 Pretend: Available=(2,3,0), Alloc[P1]=(3,0,2), Need[P1]=(0,2,0)
-Run safety → safe sequence exists → GRANT ✅
+Run safety → safe sequence exists → GRANT 
 ```
 
 ---
 
-## ⚠️ Limitations of Banker's Algorithm
+##  Limitations of Banker's Algorithm
 
 | Limitation | Detail |
 |-----------|--------|
@@ -182,7 +182,7 @@ Run safety → safe sequence exists → GRANT ✅
 
 ---
 
-## 📊 Quick Reference Summary
+##  Quick Reference Summary
 
 ```
 Key Tables:
@@ -202,7 +202,7 @@ Request Algorithm:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the Banker's Algorithm?**
 > The Banker's Algorithm is a deadlock avoidance algorithm. Before granting a resource request, it simulates the allocation and checks if the resulting system state is safe (there exists a sequence where all processes can complete). If safe, it grants the request; otherwise, the process waits.

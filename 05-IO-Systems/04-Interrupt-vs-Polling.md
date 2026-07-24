@@ -1,4 +1,4 @@
-# 🔔 Interrupt vs Polling
+#  Interrupt vs Polling
 
 ---
 
@@ -46,9 +46,9 @@ Device:            [════════════ working ═════
 | Property | Detail |
 |----------|--------|
 | CPU during I/O | Busy-waiting (wasted cycles) |
-| Latency | ✅ Very low — detects completion immediately |
-| CPU efficiency | ❌ Poor — monopolizes CPU for one I/O |
-| Complexity | ✅ Simple to implement |
+| Latency |  Very low — detects completion immediately |
+| CPU efficiency |  Poor — monopolizes CPU for one I/O |
+| Complexity |  Simple to implement |
 | Best for | Very fast devices, short waits, embedded systems |
 
 ---
@@ -90,10 +90,10 @@ Device:            [════════════ working ═════
 
 | Property | Detail |
 |----------|--------|
-| CPU during I/O | Does other useful work ✅ |
+| CPU during I/O | Does other useful work  |
 | Latency | Slightly higher (interrupt handling overhead ~microseconds) |
-| CPU efficiency | ✅ Excellent |
-| Complexity | ❌ More complex (ISR, interrupt controller, context save) |
+| CPU efficiency |  Excellent |
+| Complexity |  More complex (ISR, interrupt controller, context save) |
 | Best for | Slow devices (disk, network, keyboard) |
 
 ---
@@ -148,7 +148,7 @@ With DMA:
 | | Without DMA | With DMA |
 |-|------------|---------|
 | CPU involvement | Every byte | Only setup + completion |
-| CPU efficiency | ❌ Poor | ✅ Excellent |
+| CPU efficiency |  Poor |  Excellent |
 | Used for | Simple/old devices | Modern disks, NICs, GPUs |
 
 ---
@@ -157,12 +157,12 @@ With DMA:
 
 | Feature | Polling | Interrupt-driven |
 |---------|---------|-----------------|
-| **CPU during I/O** | Wasted (busy-wait) | Doing other work ✅ |
-| **Response latency** | ✅ Very low (immediate) | Slightly higher (ISR overhead) |
-| **CPU efficiency** | ❌ Poor | ✅ Excellent |
-| **Complexity** | ✅ Simple | ❌ More complex |
+| **CPU during I/O** | Wasted (busy-wait) | Doing other work  |
+| **Response latency** |  Very low (immediate) | Slightly higher (ISR overhead) |
+| **CPU efficiency** |  Poor |  Excellent |
+| **Complexity** |  Simple |  More complex |
 | **Device speed** | Fast devices (short wait) | Slow devices (long wait) |
-| **Multiple devices** | ❌ Hard (CPU stuck on one) | ✅ Easy (each fires own IRQ) |
+| **Multiple devices** |  Hard (CPU stuck on one) |  Easy (each fires own IRQ) |
 | **Examples** | Embedded controllers, game controllers | Keyboard, disk, NIC, USB |
 
 ---
@@ -186,7 +186,7 @@ Rule of thumb:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between interrupt-driven I/O and polling?**
 > Polling: the CPU loops, continuously checking if the device is ready — simple but wastes CPU cycles. Interrupt-driven: the CPU starts the I/O and does other work; the device signals the CPU via a hardware interrupt when done — efficient but more complex. Interrupts are preferred for slow devices (disk, keyboard, network).

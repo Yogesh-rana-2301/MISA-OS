@@ -1,4 +1,4 @@
-# 📂 File System Basics
+#  File System Basics
 
 ---
 
@@ -118,7 +118,7 @@ fd = 4 → second opened file ...
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a file system?**
 > A file system is the OS subsystem that organizes, stores, and retrieves data on storage devices. It provides the abstraction of files and directories, manages disk space allocation, controls access permissions, and maintains metadata.

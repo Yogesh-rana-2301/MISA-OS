@@ -1,4 +1,4 @@
-# 🌀 Thrashing & Working Set Model
+#  Thrashing & Working Set Model
 
 ---
 
@@ -37,7 +37,7 @@ Page fault I/O:   ░░██████████████████�
 ```
 CPU Utilization
     │
-    │         ★ optimal
+    │          optimal
     │       ╱   ╲
     │     ╱       ╲
     │   ╱           ╲ ← THRASHING begins here
@@ -119,7 +119,7 @@ If D ≤ total frames:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is thrashing?**
 > Thrashing occurs when the OS spends more time swapping pages in/out of disk than executing process instructions. CPU utilization collapses. It's caused by too many processes competing for too few frames — each process gets fewer frames than its working set requires, causing constant page faults.

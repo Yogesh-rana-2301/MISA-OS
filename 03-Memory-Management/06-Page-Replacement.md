@@ -1,4 +1,4 @@
-# 🔄 Page Replacement Algorithms
+#  Page Replacement Algorithms
 
 ---
 
@@ -23,7 +23,7 @@ Which to evict? → Page replacement algorithm decides
 
 ---
 
-## 1. 📋 FIFO — First In First Out
+## 1.  FIFO — First In First Out
 
 > **Evict the page that has been in memory the longest.**
 
@@ -33,19 +33,19 @@ Think of frames as a queue — oldest page is at the front.
 
 | Access | Frame 1 | Frame 2 | Frame 3 | Fault? |
 |--------|---------|---------|---------|--------|
-| 7 | **7** | - | - | ✅ YES |
-| 0 | 7 | **0** | - | ✅ YES |
-| 1 | 7 | 0 | **1** | ✅ YES |
-| 2 | **2** | 0 | 1 | ✅ YES (evict 7, oldest) |
-| 0 | 2 | 0 | 1 | ❌ NO |
-| 3 | 2 | **3** | 1 | ✅ YES (evict 0, oldest) |
-| 0 | 2 | 3 | **0** | ✅ YES (evict 1, oldest) |
-| 4 | **4** | 3 | 0 | ✅ YES (evict 2, oldest) |
-| 2 | 4 | **2** | 0 | ✅ YES (evict 3, oldest) |
-| 3 | 4 | 2 | **3** | ✅ YES (evict 0, oldest) |
-| 0 | **0** | 2 | 3 | ✅ YES (evict 4, oldest) |
-| 3 | 0 | 2 | 3 | ❌ NO |
-| 2 | 0 | 2 | 3 | ❌ NO |
+| 7 | **7** | - | - |  YES |
+| 0 | 7 | **0** | - |  YES |
+| 1 | 7 | 0 | **1** |  YES |
+| 2 | **2** | 0 | 1 |  YES (evict 7, oldest) |
+| 0 | 2 | 0 | 1 |  NO |
+| 3 | 2 | **3** | 1 |  YES (evict 0, oldest) |
+| 0 | 2 | 3 | **0** |  YES (evict 1, oldest) |
+| 4 | **4** | 3 | 0 |  YES (evict 2, oldest) |
+| 2 | 4 | **2** | 0 |  YES (evict 3, oldest) |
+| 3 | 4 | 2 | **3** |  YES (evict 0, oldest) |
+| 0 | **0** | 2 | 3 |  YES (evict 4, oldest) |
+| 3 | 0 | 2 | 3 |  NO |
+| 2 | 0 | 2 | 3 |  NO |
 
 **Total Page Faults = 9**
 
@@ -53,13 +53,13 @@ Think of frames as a queue — oldest page is at the front.
 
 | | Detail |
 |-|--------|
-| Simple | ✅ Easy to implement (queue) |
-| Optimal? | ❌ No |
-| Belady's Anomaly | ✅ Suffers from it |
+| Simple |  Easy to implement (queue) |
+| Optimal? |  No |
+| Belady's Anomaly |  Suffers from it |
 
 ---
 
-## 2. 🧠 LRU — Least Recently Used
+## 2.  LRU — Least Recently Used
 
 > **Evict the page that was accessed least recently.**
 
@@ -69,19 +69,19 @@ Based on **temporal locality** — recently used pages will likely be used again
 
 | Access | Frames | Fault? | LRU order (left=least recent) |
 |--------|--------|--------|-------------------------------|
-| 7 | {7} | ✅ | [7] |
-| 0 | {7,0} | ✅ | [7,0] |
-| 1 | {7,0,1} | ✅ | [7,0,1] |
-| 2 | {0,1,2} | ✅ | evict 7 (LRU) → [0,1,2] |
-| 0 | {0,1,2} | ❌ | [1,2,0] (0 now most recent) |
-| 3 | {2,0,3} | ✅ | evict 1 (LRU) → [2,0,3] |
-| 0 | {2,0,3} | ❌ | [2,3,0] |
-| 4 | {0,3,4} | ✅ | evict 2 (LRU) |
-| 2 | {3,4,2} | ✅ | evict 0 (LRU) |
-| 3 | {3,4,2} | ❌ | [4,2,3] |
-| 0 | {2,3,0} | ✅ | evict 4 (LRU) |
-| 3 | {2,3,0} | ❌ | [2,0,3] |
-| 2 | {2,3,0} | ❌ | [0,3,2] |
+| 7 | {7} |  | [7] |
+| 0 | {7,0} |  | [7,0] |
+| 1 | {7,0,1} |  | [7,0,1] |
+| 2 | {0,1,2} |  | evict 7 (LRU) → [0,1,2] |
+| 0 | {0,1,2} |  | [1,2,0] (0 now most recent) |
+| 3 | {2,0,3} |  | evict 1 (LRU) → [2,0,3] |
+| 0 | {2,0,3} |  | [2,3,0] |
+| 4 | {0,3,4} |  | evict 2 (LRU) |
+| 2 | {3,4,2} |  | evict 0 (LRU) |
+| 3 | {3,4,2} |  | [4,2,3] |
+| 0 | {2,3,0} |  | evict 4 (LRU) |
+| 3 | {2,3,0} |  | [2,0,3] |
+| 2 | {2,3,0} |  | [0,3,2] |
 
 **Total Page Faults = 8**
 
@@ -90,9 +90,9 @@ Based on **temporal locality** — recently used pages will likely be used again
 | | Detail |
 |-|--------|
 | Based on | Past access history |
-| Optimal? | ❌ No, but good approximation |
+| Optimal? |  No, but good approximation |
 | Implementation | Counters or Stack |
-| Belady's Anomaly | ❌ Does NOT suffer |
+| Belady's Anomaly |  Does NOT suffer |
 | Overhead | Higher (tracking access times) |
 
 ---
@@ -108,19 +108,19 @@ This is the **theoretically best** algorithm. It minimizes page faults.
 
 | Access | Frames | Fault? | Evict |
 |--------|--------|--------|-------|
-| 7 | {7} | ✅ | — |
-| 0 | {7,0} | ✅ | — |
-| 1 | {7,0,1} | ✅ | — |
-| 2 | {0,1,2} | ✅ | Evict 7 (next use: never again) |
-| 0 | {0,1,2} | ❌ | |
-| 3 | {0,2,3} | ✅ | Evict 1 (next use: never again) |
-| 0 | {0,2,3} | ❌ | |
-| 4 | {0,3,4} | ✅ | Evict 2 (next use: farthest) |
-| 2 | {0,2,3} | ✅ | Evict 4 (next use: never) |
-| 3 | {0,2,3} | ❌ | |
-| 0 | {0,2,3} | ❌ | |
-| 3 | {0,2,3} | ❌ | |
-| 2 | {0,2,3} | ❌ | |
+| 7 | {7} |  | — |
+| 0 | {7,0} |  | — |
+| 1 | {7,0,1} |  | — |
+| 2 | {0,1,2} |  | Evict 7 (next use: never again) |
+| 0 | {0,1,2} |  | |
+| 3 | {0,2,3} |  | Evict 1 (next use: never again) |
+| 0 | {0,2,3} |  | |
+| 4 | {0,3,4} |  | Evict 2 (next use: farthest) |
+| 2 | {0,2,3} |  | Evict 4 (next use: never) |
+| 3 | {0,2,3} |  | |
+| 0 | {0,2,3} |  | |
+| 3 | {0,2,3} |  | |
+| 2 | {0,2,3} |  | |
 
 **Total Page Faults = 7** ← Minimum possible
 
@@ -128,8 +128,8 @@ This is the **theoretically best** algorithm. It minimizes page faults.
 
 | | Detail |
 |-|--------|
-| Optimal? | ✅ YES — minimum faults |
-| Implementable? | ❌ NO — needs future knowledge |
+| Optimal? |  YES — minimum faults |
+| Implementable? |  NO — needs future knowledge |
 | Purpose | Benchmark to compare other algorithms |
 
 ---
@@ -138,13 +138,13 @@ This is the **theoretically best** algorithm. It minimizes page faults.
 
 | Algorithm | Page Faults (3 frames) | Belady's Anomaly | Implementable |
 |-----------|----------------------|-----------------|--------------|
-| FIFO | 9 | ✅ Yes | ✅ Yes |
-| LRU | 8 | ❌ No | ✅ Yes (with overhead) |
-| Optimal | 7 | ❌ No | ❌ No (theoretical) |
+| FIFO | 9 |  Yes |  Yes |
+| LRU | 8 |  No |  Yes (with overhead) |
+| Optimal | 7 |  No |  No (theoretical) |
 
 ---
 
-## ⚠️ Belady's Anomaly
+##  Belady's Anomaly
 
 ### What is it?
 
@@ -168,7 +168,7 @@ But with FIFO, it can happen.
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: Compare FIFO, LRU, and Optimal page replacement.**
 > FIFO evicts the oldest page — simple but inefficient (9 faults in example). LRU evicts the least recently used page — good approximation of optimal (8 faults). Optimal evicts the page used farthest in the future — theoretically best (7 faults) but not implementable. LRU is the practical choice.

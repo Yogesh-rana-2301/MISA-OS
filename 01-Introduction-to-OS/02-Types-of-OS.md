@@ -1,4 +1,4 @@
-# 🗂️ Types of Operating Systems
+#  Types of Operating Systems
 
 ---
 
@@ -16,7 +16,7 @@ Types of OS
 
 ---
 
-## 1. 📦 Batch OS
+## 1.  Batch OS
 
 ### What is it?
 
@@ -35,7 +35,7 @@ User submits jobs → Batch Queue → OS picks job → Executes → Next job
 3. OS executes each job sequentially
 4. Output is returned after all jobs complete
 
-### Advantages ✅
+### Advantages 
 
 | Advantage | Detail |
 |-----------|--------|
@@ -43,7 +43,7 @@ User submits jobs → Batch Queue → OS picks job → Executes → Next job
 | No idle CPU time | CPU always busy (if queue is non-empty) |
 | Simple scheduling | No complex user interaction needed |
 
-### Disadvantages ❌
+### Disadvantages 
 
 | Disadvantage | Detail |
 |-------------|--------|
@@ -52,7 +52,7 @@ User submits jobs → Batch Queue → OS picks job → Executes → Next job
 | Hard to debug | Errors only seen after job finishes |
 | Poor CPU utilization | CPU idles during I/O operations |
 
-### Use Cases 🏭
+### Use Cases 
 
 - **Payroll processing** (run every week)
 - **Bank statement generation**
@@ -61,7 +61,7 @@ User submits jobs → Batch Queue → OS picks job → Executes → Next job
 
 ---
 
-## 2. ⏱️ Time-Sharing OS (Multitasking OS)
+## 2.  Time-Sharing OS (Multitasking OS)
 
 ### What is it?
 
@@ -83,19 +83,19 @@ Time Slices:
 
 - UNIX, Linux, Windows — all modern OSes are time-sharing
 
-### Advantages ✅
+### Advantages 
 - Interactive user experience
 - Multiple users can work simultaneously
 - Better CPU utilization than batch
 
-### Disadvantages ❌
+### Disadvantages 
 - Context switching overhead
 - Security concerns (data leakage between users)
 - Complex scheduling
 
 ---
 
-## 3. 🌐 Distributed OS
+## 3.  Distributed OS
 
 ### What is it?
 
@@ -118,19 +118,19 @@ Computer C ─────┘
 - Google's distributed systems (GFS, MapReduce)
 - Hadoop clusters
 
-### Advantages ✅
+### Advantages 
 - High computational power
 - Fault tolerant
 - Resource sharing across locations
 
-### Disadvantages ❌
+### Disadvantages 
 - Complex to design and manage
 - Network failure can cause issues
 - Security challenges across nodes
 
 ---
 
-## 4. ⚡ Real-Time OS (RTOS)
+## 4.  Real-Time OS (RTOS)
 
 ### What is it?
 
@@ -148,25 +148,25 @@ Event occurs → RTOS processes → Response within GUARANTEED time window
 | **Hard Real-Time** | Missing deadline = system failure | Airbag controller, pacemaker |
 | **Soft Real-Time** | Missing deadline = degraded performance (acceptable) | Video streaming, online gaming |
 
-### Use Cases 🏥
+### Use Cases 
 
 - **Medical devices**: Pacemakers, ventilators
 - **Aerospace**: Flight control systems
 - **Automotive**: Anti-lock braking system (ABS), airbags
 - **Industrial**: Robotic arms, assembly line control
 
-### Advantages ✅
+### Advantages 
 - Predictable, deterministic behavior
 - Highly reliable for critical systems
 
-### Disadvantages ❌
+### Disadvantages 
 - Limited to specific hardware
 - Very complex to develop
 - Generally single-purpose
 
 ---
 
-## 📊 Comparison Table
+##  Comparison Table
 
 | Feature | Batch | Time-Sharing | Distributed | Real-Time |
 |---------|-------|-------------|-------------|-----------|
@@ -178,7 +178,7 @@ Event occurs → RTOS processes → Response within GUARANTEED time window
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between Batch OS and Time-Sharing OS?**
 > In Batch OS, jobs run sequentially with no user interaction; the user submits a job and waits. In Time-Sharing OS, multiple users get CPU time slices, enabling interactive use. Batch OS has higher throughput for bulk jobs; Time-Sharing is better for interactive tasks.

@@ -1,4 +1,4 @@
-# 🖥️ Operating Systems — Interview Preparation Structure
+#  Operating Systems — Interview Preparation Structure
 
 ---
 
@@ -240,7 +240,7 @@
 
 ---
 
-# 🔥 High-Yield Topics (Revise Multiple Times)
+#  High-Yield Topics (Revise Multiple Times)
 
 * CPU Scheduling Algorithms
 * Deadlocks (4 conditions + Banker’s)
@@ -252,7 +252,7 @@
 
 ---
 
-# 🎯 Final Goal
+#  Final Goal
 
 You should be able to:
 

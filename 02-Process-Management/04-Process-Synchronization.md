@@ -1,4 +1,4 @@
-# 🔐 Process Synchronization & Critical Section
+#  Process Synchronization & Critical Section
 
 ---
 
@@ -39,7 +39,7 @@ This is a **race condition** — the result depends on the execution order.
 
 ---
 
-## 🎯 The Critical Section Problem
+##  The Critical Section Problem
 
 The **Critical Section (CS)** is the portion of code that **accesses shared resources**.
 
@@ -63,7 +63,7 @@ The goal: **design the entry and exit sections** so that concurrent processes do
 
 ---
 
-## ✅ Three Requirements for a Valid CS Solution
+##  Three Requirements for a Valid CS Solution
 
 A correct solution to the critical section problem MUST satisfy all three:
 
@@ -116,7 +116,7 @@ P2 and P3 can each enter at most K more times before P1 must be allowed in.
 
 ---
 
-## ❌ Simple (Broken) Attempts at CS Solution
+##  Simple (Broken) Attempts at CS Solution
 
 ### Attempt 1: Disable Interrupts
 ```
@@ -124,9 +124,9 @@ entry: disable_interrupts()
 // Critical Section
 exit: enable_interrupts()
 ```
-- ✅ Works on single-core
-- ❌ Doesn't work on multi-core (other CPUs still run)
-- ❌ Dangerous — user code disabling interrupts
+-  Works on single-core
+-  Doesn't work on multi-core (other CPUs still run)
+-  Dangerous — user code disabling interrupts
 
 ---
 
@@ -141,12 +141,12 @@ entry:
 exit:
     lock = false;
 ```
-- ❌ **Violates mutual exclusion!**
+-  **Violates mutual exclusion!**
 - Two processes can both see `lock = false` and both enter CS simultaneously (race condition on the flag itself!)
 
 ---
 
-### Attempt 3: Peterson's Algorithm (Correct ✅)
+### Attempt 3: Peterson's Algorithm (Correct )
 
 For **2 processes** (P0 and P1):
 
@@ -166,7 +166,7 @@ Peterson's satisfies all 3 requirements but is **software-only** and works for 2
 
 ---
 
-## 🔧 Hardware Solutions
+##  Hardware Solutions
 
 Modern CPUs provide **atomic instructions**:
 
@@ -180,7 +180,7 @@ These are used to build **mutex locks and semaphores** (see next files).
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the critical section problem?**
 > The critical section problem is about designing a protocol so that when multiple processes share data, only one process accesses the shared data (critical section) at a time, preventing race conditions.

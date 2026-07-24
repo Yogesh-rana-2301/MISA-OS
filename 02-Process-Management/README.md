@@ -1,10 +1,10 @@
-# ⚙️ Topic 2 — Process Management
+#  Topic 2 — Process Management
 
 > **Goal**: Understand how the OS schedules, synchronizes, and protects processes — heavily tested in interviews.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -19,7 +19,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] FCFS, SJF, Round Robin, Priority — know Gantt chart + formulas
 - [ ] Calculate **waiting time** and **turnaround time** for each algorithm
@@ -34,7 +34,7 @@
 
 ---
 
-## 🎯 Top Interview Questions from This Topic
+##  Top Interview Questions from This Topic
 
 1. Compare FCFS, SJF, and Round Robin with examples.
 2. What is a context switch? Why is it expensive?

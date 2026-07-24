@@ -1,4 +1,4 @@
-# 🔀 Context Switching
+#  Context Switching
 
 ---
 
@@ -10,7 +10,7 @@ A **context switch** is the process of **saving the state of the current process
 
 ---
 
-## 🔄 What Happens During a Context Switch
+##  What Happens During a Context Switch
 
 ### Step-by-Step Flow
 
@@ -52,7 +52,7 @@ CPU running Process B (from where it left off)
 
 ---
 
-## 📋 What Gets Saved/Restored (Context)
+##  What Gets Saved/Restored (Context)
 
 The **context** of a process is everything the CPU needs to resume it:
 
@@ -70,7 +70,7 @@ All of this is stored in the process's **PCB (Process Control Block)**.
 
 ---
 
-## ⏱️ Timeline View
+##  Timeline View
 
 ```
 Time ──────────────────────────────────────────────────────────────→
@@ -88,7 +88,7 @@ Process B: [idle─idle─idle][RUNNING─────────────�
 
 ---
 
-## 💸 Overhead — Why Context Switches Are Expensive
+##  Overhead — Why Context Switches Are Expensive
 
 ### Direct Costs
 
@@ -111,7 +111,7 @@ Process B: [idle─idle─idle][RUNNING─────────────�
 
 ---
 
-## 🔧 What Triggers a Context Switch?
+##  What Triggers a Context Switch?
 
 | Trigger | Description |
 |---------|-------------|
@@ -124,7 +124,7 @@ Process B: [idle─idle─idle][RUNNING─────────────�
 
 ---
 
-## 🧠 Context Switch vs Mode Switch
+##  Context Switch vs Mode Switch
 
 These are **different** concepts that often happen together:
 
@@ -141,7 +141,7 @@ These are **different** concepts that often happen together:
 
 ---
 
-## ⚙️ Minimizing Context Switch Overhead
+##  Minimizing Context Switch Overhead
 
 Modern systems use several tricks:
 
@@ -155,7 +155,7 @@ Modern systems use several tricks:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a context switch?**
 > A context switch is when the OS saves the state (PC, registers, memory maps) of the currently running process into its PCB and loads the state of another process from its PCB. This allows multiple processes to share a single CPU.

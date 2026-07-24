@@ -1,4 +1,4 @@
-# 💥 Page Fault
+#  Page Fault
 
 ---
 
@@ -50,8 +50,8 @@ Page fault types:
 │           ↓                                             │
 │  STEP 3: OS page fault handler runs (kernel mode)       │
 │           Check if address is valid:                    │
-│             Invalid → send SIGSEGV → process dies ❌    │
-│             Valid   → continue ✅                       │
+│             Invalid → send SIGSEGV → process dies     │
+│             Valid   → continue                        │
 │           ↓                                             │
 │  STEP 4: Find a free frame in RAM                       │
 │           If no free frame → run Page Replacement algo  │
@@ -121,7 +121,7 @@ Example:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a page fault?**
 > A page fault is a hardware exception raised when a process accesses a virtual page that is not currently in RAM (valid bit = 0 in page table). The OS page fault handler loads the required page from disk into RAM and retries the instruction.

@@ -1,8 +1,8 @@
-# 🛡️ Kernel Mode vs User Mode
+#  Kernel Mode vs User Mode
 
 ---
 
-## 🔑 Why Two Modes?
+##  Why Two Modes?
 
 The CPU needs to protect the OS from misbehaving programs.
 Without protection, a buggy or malicious program could:
@@ -30,9 +30,9 @@ The solution: **hardware-enforced dual mode operation**.
 
 ---
 
-## ⚙️ Privileged vs Non-Privileged Instructions
+##  Privileged vs Non-Privileged Instructions
 
-### Non-Privileged Instructions (User Mode allowed ✅)
+### Non-Privileged Instructions (User Mode allowed )
 
 Any program can execute these safely:
 
@@ -45,7 +45,7 @@ Any program can execute these safely:
 
 ---
 
-### Privileged Instructions (Kernel Mode only 🔒)
+### Privileged Instructions (Kernel Mode only )
 
 Only the OS kernel can execute these:
 
@@ -61,7 +61,7 @@ Only the OS kernel can execute these:
 
 ---
 
-## 🔄 Mode Switching
+##  Mode Switching
 
 ### User Mode → Kernel Mode (3 ways)
 
@@ -99,7 +99,7 @@ App (User Mode) resumes
 
 ---
 
-## 🔐 Why Protection is Needed
+##  Why Protection is Needed
 
 ### Problem Without Protection
 
@@ -128,7 +128,7 @@ Process A (buggy):
 
 ---
 
-## 🧠 Kernel vs User Space
+##  Kernel vs User Space
 
 | | User Space | Kernel Space |
 |-|-----------|-------------|
@@ -140,7 +140,7 @@ Process A (buggy):
 
 ---
 
-## 📊 Summary
+##  Summary
 
 ```
 User Mode ──── SYSCALL / Interrupt / Exception ──→ Kernel Mode
@@ -154,7 +154,7 @@ Kernel Mode ───────────── SYSRET / IRET ────�
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between kernel mode and user mode?**
 > Kernel mode (Ring 0) allows execution of all instructions and direct hardware access. User mode (Ring 3) restricts programs to non-privileged instructions only. The CPU has a mode bit that determines the current mode. This separation prevents user programs from corrupting the OS or each other.

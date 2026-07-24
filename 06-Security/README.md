@@ -1,10 +1,10 @@
-# 🔐 Topic 6 — Storage Management & Security
+#  Topic 6 — Storage Management & Security
 
 > **Goal**: Understand OS-level security concepts that appear in interviews — focused on clarity over depth.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -14,7 +14,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] Authentication vs Authorization — clear one-line definitions
 - [ ] CIA Triad — Confidentiality, Integrity, Availability — with examples
@@ -26,7 +26,7 @@
 
 ---
 
-## 🎯 Top Interview Questions from This Topic
+##  Top Interview Questions from This Topic
 
 1. What is the difference between authentication and authorization?
 2. What is the CIA triad?

@@ -1,10 +1,10 @@
-# 🔌 Topic 5 — I/O Systems
+#  Topic 5 — I/O Systems
 
 > **Goal**: Understand how the OS manages input/output devices — focused on the concepts that actually appear in interviews.
 
 ---
 
-## 📚 Subtopics
+##  Subtopics
 
 | # | File | Topic |
 |---|------|-------|
@@ -15,7 +15,7 @@
 
 ---
 
-## 🔥 Quick Revision Checklist
+##  Quick Revision Checklist
 
 - [ ] Blocking vs Non-blocking — what happens to the process in each?
 - [ ] Synchronous vs Asynchronous — does the caller wait for completion?
@@ -26,7 +26,7 @@
 
 ---
 
-## 🎯 Top Interview Questions from This Topic
+##  Top Interview Questions from This Topic
 
 1. What is the difference between blocking and non-blocking I/O?
 2. What is the difference between synchronous and asynchronous I/O?

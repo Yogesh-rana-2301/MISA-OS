@@ -1,4 +1,4 @@
-# 🔄 Process & Its States
+#  Process & Its States
 
 ---
 
@@ -27,7 +27,7 @@ Same program.exe can create:
 
 ---
 
-## 🔄 Process Lifecycle & States
+##  Process Lifecycle & States
 
 A process transitions through **5 states** during its lifetime:
 
@@ -92,7 +92,7 @@ CPU
 
 ---
 
-## 📋 PCB — Process Control Block
+##  PCB — Process Control Block
 
 The OS maintains a **PCB** for every process. It's the OS's "file" on each process.
 
@@ -130,7 +130,7 @@ P1 running → Save P1's context to PCB1 → Load P2's context from PCB2 → P2 
 
 ---
 
-## 🧠 Key Concepts to Remember
+##  Key Concepts to Remember
 
 ### At any time:
 - **ONE** process can be in **Running** state per CPU core
@@ -142,7 +142,7 @@ P1 running → Save P1's context to PCB1 → Load P2's context from PCB2 → P2 
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between a process and a program?**
 > A program is a static set of instructions on disk. A process is a program in execution — an active entity with its own memory space, CPU registers, and OS resources. Multiple processes can run from the same program.

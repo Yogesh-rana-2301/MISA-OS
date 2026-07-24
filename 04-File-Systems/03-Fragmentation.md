@@ -1,4 +1,4 @@
-# 🧩 Fragmentation in File Systems
+#  Fragmentation in File Systems
 
 ---
 
@@ -45,7 +45,7 @@ But no contiguous 5-block hole exists!
 File size: 4097 bytes
 Block size: 4096 bytes (4KB)
 
-Blocks needed: ⌈4097 / 4096⌉ = 2 blocks = 8192 bytes allocated
+Blocks needed: 4097 / 4096 = 2 blocks = 8192 bytes allocated
 Wasted space:  8192 - 4097 = 4095 bytes ← Internal Fragmentation
 ```
 
@@ -119,7 +119,7 @@ Free block 2 → Free block 3 → Free block 6 → NULL
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is file system fragmentation?**
 > There are three types: External fragmentation (free disk space scattered in non-contiguous holes — only in contiguous allocation), internal fragmentation (last block partially used — wasted space in fixed-size blocks), and file/disk fragmentation (one file's blocks scattered across disk — causes slow reads on HDD).

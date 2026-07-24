@@ -1,4 +1,4 @@
-# ⏳ Synchronous vs Asynchronous I/O
+#  Synchronous vs Asynchronous I/O
 
 ---
 
@@ -151,9 +151,9 @@ File read requested, continuing...   ← runs first
 
 | Aspect | Synchronous | Asynchronous |
 |--------|------------|-------------|
-| **Caller waits?** | ✅ Yes | ❌ No |
+| **Caller waits?** |  Yes |  No |
 | **Notification** | Result returned directly | Callback / event / signal |
-| **Code complexity** | ✅ Simple, linear | ❌ Complex (callbacks, promises) |
+| **Code complexity** |  Simple, linear |  Complex (callbacks, promises) |
 | **Concurrency** | Need threads for scale | Single thread handles many I/Os |
 | **Latency** | Higher (waits for each) | Lower (multiple in-flight) |
 | **Use case** | Simple programs, scripts | High-performance servers, GUIs |
@@ -161,7 +161,7 @@ File read requested, continuing...   ← runs first
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between synchronous and asynchronous I/O?**
 > Synchronous I/O: the caller waits (or polls) until the I/O operation completes before moving to the next instruction. Asynchronous I/O: the caller fires the request and immediately continues; the OS notifies the caller (via callback, signal, or event) when the operation finishes.

@@ -1,4 +1,4 @@
-# 🚦 Semaphores
+#  Semaphores
 
 ---
 
@@ -17,7 +17,7 @@ signal(S):  Increment S. If any process is blocked, WAKE one up.
 
 ---
 
-## ⚙️ wait() and signal() Operations
+##  wait() and signal() Operations
 
 ### Classic Definitions
 
@@ -53,7 +53,7 @@ signal(S) {
 
 ---
 
-## 1. 🔴 Binary Semaphore
+## 1.  Binary Semaphore
 
 A semaphore initialized to **1**.  
 Behaves exactly like a mutex — only **0** or **1**.
@@ -81,7 +81,7 @@ signal(mutex);
 
 ---
 
-## 2. 🟢 Counting Semaphore
+## 2.  Counting Semaphore
 
 A semaphore initialized to **N** (any positive integer).  
 Controls access to **N identical resources** (e.g., N database connections, N printer slots).
@@ -121,7 +121,7 @@ signal(resource_count);
 
 ---
 
-## 🔄 Producer-Consumer Problem (Classic Example)
+##  Producer-Consumer Problem (Classic Example)
 
 **Problem**: Producer adds items to buffer, Consumer removes them.  
 Buffer has fixed size N. Must not overflow or underflow.
@@ -183,7 +183,7 @@ This ensures Process B always executes **after** Process A's signal — useful f
 
 ---
 
-## ⚠️ Semaphore Pitfalls
+##  Semaphore Pitfalls
 
 | Mistake | Consequence |
 |---------|-------------|
@@ -194,7 +194,7 @@ This ensures Process B always executes **after** Process A's signal — useful f
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is a semaphore?**
 > A semaphore is an integer variable accessed through two atomic operations: `wait()` (decrement, block if < 0) and `signal()` (increment, wake a blocked process if any). It's used for mutual exclusion and process synchronization.

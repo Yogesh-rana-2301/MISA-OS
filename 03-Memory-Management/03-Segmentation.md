@@ -1,4 +1,4 @@
-# 🗂️ Segmentation
+#  Segmentation
 
 ---
 
@@ -69,7 +69,7 @@ Segment table[1]: base = 0x7000, limit = 200
 
 Logical address (1, 53):
   segment = 1, offset = 53
-  Check: 53 < 200 ✅
+  Check: 53 < 200 
   Physical = 0x7000 + 53 = 0x7035
 ```
 
@@ -81,8 +81,8 @@ Logical address (1, 53):
 |---------|--------|-------------|
 | **Division** | Fixed-size pages | Variable-size logical segments |
 | **User visibility** | Transparent | Programmer-defined |
-| **External fragmentation** | ❌ None | ✅ Yes (variable sizes cause holes) |
-| **Internal fragmentation** | ✅ Yes (last page) | ❌ None |
+| **External fragmentation** |  None |  Yes (variable sizes cause holes) |
+| **Internal fragmentation** |  Yes (last page) |  None |
 | **Protection** | Per-page bits | Per-segment (code=read-only, stack=RW) |
 | **Sharing** | Hard (fixed boundaries) | Easy (share code segment) |
 | **Address format** | (page#, offset) | (segment#, offset) |
@@ -117,7 +117,7 @@ Logical Address → [Segment | Page | Offset]
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is segmentation?**
 > Segmentation divides a process's memory into variable-size, logically meaningful units — code, data, heap, stack. Each segment has a base address and a limit. The logical address is (segment number, offset); the OS translates via a segment table.

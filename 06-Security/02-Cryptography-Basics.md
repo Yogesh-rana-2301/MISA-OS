@@ -1,4 +1,4 @@
-# 🔑 Cryptography — Encryption vs Hashing
+#  Cryptography — Encryption vs Hashing
 
 ---
 
@@ -27,8 +27,8 @@ Ciphertext + Key → [Decryption Algorithm] → Plaintext
 
 | Property | Detail |
 |----------|--------|
-| **Reversible** | ✅ Yes — can always decrypt back to original |
-| **Needs a key** | ✅ Both encryption and decryption use key(s) |
+| **Reversible** |  Yes — can always decrypt back to original |
+| **Needs a key** |  Both encryption and decryption use key(s) |
 | **Purpose** | Confidentiality — hide data in transit or at rest |
 | **Output size** | Similar to or larger than input |
 
@@ -46,8 +46,8 @@ Alice ──[Encrypt with KEY]──→ Ciphertext ──→ Bob ──[Decrypt 
 
 | Property | Detail |
 |----------|--------|
-| Speed | ✅ Fast |
-| Key sharing | ❌ Problem — how do you share the key securely? |
+| Speed |  Fast |
+| Key sharing |  Problem — how do you share the key securely? |
 | Algorithms | AES (Advanced Encryption Standard), DES, ChaCha20 |
 | Use case | Encrypting files, disk encryption, bulk data transfer |
 
@@ -59,8 +59,8 @@ Alice ──[Encrypt with KEY]──→ Ciphertext ──→ Bob ──[Decrypt 
 > What one key encrypts, only the other can decrypt.
 
 ```
-Bob's Public Key:  📢 Shared openly (anyone can have it)
-Bob's Private Key: 🔒 Only Bob has it
+Bob's Public Key:   Shared openly (anyone can have it)
+Bob's Private Key:  Only Bob has it
 
 Alice wants to send Bob a secret:
   Alice encrypts with Bob's PUBLIC key  → ciphertext
@@ -71,8 +71,8 @@ No need to share a secret key!
 
 | Property | Detail |
 |----------|--------|
-| Speed | ❌ Slow (computationally heavy) |
-| Key sharing | ✅ Public key can be shared openly |
+| Speed |  Slow (computationally heavy) |
+| Key sharing |  Public key can be shared openly |
 | Algorithms | RSA, ECC (Elliptic Curve Cryptography) |
 | Use case | Key exchange, digital signatures, HTTPS handshake |
 
@@ -108,7 +108,7 @@ Input (any size) → [Hash Function] → Fixed-size Hash (digest)
 
 | Property | Detail |
 |----------|--------|
-| **Irreversible (One-way)** | ✅ Cannot get input back from hash |
+| **Irreversible (One-way)** |  Cannot get input back from hash |
 | **Deterministic** | Same input → always same hash |
 | **Fixed output size** | MD5=128 bits, SHA-1=160 bits, SHA-256=256 bits |
 | **Avalanche effect** | 1 bit change in input → completely different hash |
@@ -120,11 +120,11 @@ Input (any size) → [Hash Function] → Fixed-size Hash (digest)
 
 | Algorithm | Output Size | Status |
 |-----------|------------|--------|
-| MD5 | 128 bits | ❌ Broken (collisions found) — don't use for security |
-| SHA-1 | 160 bits | ❌ Deprecated (collisions found) |
-| **SHA-256** | 256 bits | ✅ Secure — widely used |
-| **SHA-3** | Variable | ✅ Secure — newer standard |
-| **bcrypt** | 60 chars | ✅ Best for passwords (slow by design!) |
+| MD5 | 128 bits |  Broken (collisions found) — don't use for security |
+| SHA-1 | 160 bits |  Deprecated (collisions found) |
+| **SHA-256** | 256 bits |  Secure — widely used |
+| **SHA-3** | Variable |  Secure — newer standard |
+| **bcrypt** | 60 chars |  Best for passwords (slow by design!) |
 
 ---
 
@@ -150,7 +150,7 @@ Registration:
 Login:
   User enters: "mypassword123"
   App computes: bcrypt("mypassword123") = "$2a$12$abc...xyz"
-  Compares: stored_hash == computed_hash? → ✅ Login success
+  Compares: stored_hash == computed_hash? →  Login success
 
 Even if database is stolen:
   Attacker has: "$2a$12$abc...xyz"
@@ -163,12 +163,12 @@ Even if database is stolen:
 
 | Feature | Encryption | Hashing |
 |---------|-----------|---------|
-| **Reversible?** | ✅ Yes (with key) | ❌ No (one-way) |
-| **Key required?** | ✅ Yes | ❌ No |
+| **Reversible?** |  Yes (with key) |  No (one-way) |
+| **Key required?** |  Yes |  No |
 | **Output size** | Similar to input | Fixed (e.g., 256 bits) |
 | **Purpose** | Confidentiality | Integrity, verification |
-| **Use for passwords?** | ❌ No (if key leaked, all passwords exposed) | ✅ Yes |
-| **Use for data in transit?** | ✅ Yes (TLS/HTTPS) | ❌ No (can't recover data) |
+| **Use for passwords?** |  No (if key leaked, all passwords exposed) |  Yes |
+| **Use for data in transit?** |  Yes (TLS/HTTPS) |  No (can't recover data) |
 | **Examples** | AES, RSA | SHA-256, bcrypt |
 
 ---
@@ -191,7 +191,7 @@ If you HASH passwords:
 
 ---
 
-## 🎯 Interview Questions & Answers
+##  Interview Questions & Answers
 
 **Q: What is the difference between encryption and hashing?**
 > Encryption is reversible — data is transformed using a key and can be decrypted back. Used for confidentiality (hiding data). Hashing is one-way — input is mapped to a fixed-size digest with no way to reverse it. Used for integrity verification and password storage. You encrypt data you need to recover; you hash data you only need to verify.
